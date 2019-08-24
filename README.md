@@ -10,15 +10,15 @@
 |month|integer|null: false|
 |day|integer|null: false|
 |tel|string|nullfalse|
-|city|string|null: false|
-|adress|string|null: false|
-|building|string||
 |home_tel|string||
+|profile|references|foreign_key: true|
+|card|references|foreign_key: true|
 
 ### Association
 - has_many :items
 - has_one :profile
 - has_one :card
+- has_one :street
 
 
 
@@ -28,13 +28,14 @@
 |name|string|null: false|
 |price|integer|null: false|
 |description|text|null: false|
-|state|string|null: false|
+|state|integer|null: false|
 |delivery_fee|integer|null: false|
-|shipping_method|string|null: false|
-|shipping_time|string|null_false|
+|shipping_method|integer|null: false|
+|shipping_time|integer|null_false|
 |like|integer||
 |seller_id|integer|null: false|
 |buyer_id|integer||
+|brand|references |foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -57,7 +58,7 @@
 |column|TYpe|OPtion|
 |------|----|------|
 |name|string|null: false|
-|item_id|integer||
+
 
 ### Association
 - has_many :items
@@ -66,7 +67,7 @@
 |column|Type|Option|
 |------|----|------|
 |image|string|null: false|
-|item_id|integer|null: false|
+|item|references |null: false|
 
 ### Association
 - belongs_to :item
@@ -75,8 +76,8 @@
 |column|Type|Option|
 |------|----|------|
 |comment|text|null: false|
-|user_id|integer|null: false|
-|item_id|integer|null: false|
+|user|references |null: false|
+|item|references |null: false|
 
 ### Association
 - belongs_to :item
@@ -86,7 +87,7 @@
 |------|----|------|
 |image|string||
 |text|text||
-|user_id|integer|null: flase|
+|user|references|null: flase|
  
 ### Association
 - belongs_to user
@@ -98,6 +99,18 @@
 |limit_month|integer|null: false|
 |limit_year|integer|null: false|
 |code|integer|null: false|
+
+
+### Association
+- belongs_to user
+
+
+## streetsテーブル
+|column|Type|Option|
+|------|----|------|
+|city|string|null: false|
+|adress|string|null: false|
+|building|string||
 
 ### Association
 - belongs_to user
