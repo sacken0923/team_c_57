@@ -19,6 +19,7 @@
 - has_one :profile
 - has_one :card
 - has_one :street
+- has_many :comments
 
 
 
@@ -35,7 +36,7 @@
 |like|integer||
 |seller_id|integer|null: false|
 |buyer_id|integer||
-|brand|references |foreign_key: true|
+|brand|references|foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -76,11 +77,12 @@
 |column|Type|Option|
 |------|----|------|
 |comment|text|null: false|
-|user|references |null: false|
-|item|references |null: false|
+|user|references |null: false, foreign_key: true|
+|item|references |null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
+- belongs_to :user
 
 ## profilesテーブル
 |column|Type|Option|
