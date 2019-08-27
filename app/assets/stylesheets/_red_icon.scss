@@ -1,0 +1,20 @@
+.red-icon-link{
+  color: #fff;
+}
+.red-icon{
+  width: 160px;
+  height: 160px;
+  background-color: #ea352d;
+  border-radius: 50%;
+  position: fixed;
+  bottom:32px;
+  right: 32px;
+  text-align: center;
+  &__message{
+    margin-top: 32px;
+    font-size: 22px;
+  }
+  &__camera{
+    font-size: 54px;
+  }
+}
