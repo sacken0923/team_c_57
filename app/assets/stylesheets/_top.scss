@@ -1,0 +1,81 @@
+.top-link{
+  text-decoration: none;
+  color: #333;
+}
+.top{
+  background-color: #f5f5f5;
+  width: 100vw;
+  text-align: center;
+  &__banner{
+    height: 390px;
+    background: url(https://www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?273499512);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fffaf0;
+  }
+  .top__main{
+    padding:40px 0;
+    &__title{
+      font-size: 28px;
+      font-weight: bold;
+    }
+    &__box{
+      width: 940px;
+      margin: 0 auto;
+      .top-genre{
+        color: #0099e8;
+        display: inline-block;
+        font-size: 22px;
+        font-weight: bold;
+        margin: 26px 11px;
+      }
+    }
+    .top-items{
+      margin: 0 auto;
+      display: flex;
+      &__box{
+        background-color: #fff;
+        width: 213px;
+        margin-left:16px;
+        .top-image{
+          width: 213Px;
+          height: 213px;
+        }
+        .top-description{
+          height: 110px;
+          padding: 16px;
+          box-sizing: border-box;
+          text-align: left;
+          &__name{
+            overflow: hidden;
+            font-size: 16px;
+            height: 3em;
+            line-height: 1.5;
+            font-weight: 400;
+          }
+          &__bottom{
+            justify-content: space-between;
+            display: flex;
+            font-size: 17px;
+            margin-top: 8px;
+            &__price{
+              font-weight: 600;
+            }
+          &__like{
+            color: #333;
+          }
+          }
+        }
+      }  
+    }
+  .top-look{
+    padding:20px 0 30px;
+    text-align: right;
+    &__all{
+      color: #0099e8;
+      font-size: 14px;
+    }
+  }
+  }
+}
