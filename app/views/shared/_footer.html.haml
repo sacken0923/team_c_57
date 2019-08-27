@@ -6,10 +6,10 @@
       .footer-top__box__right__guide
         今すぐ無料ダウンロード！
       .footer-top__box__right__icons
-        %img.footer-top-merukari{src: "https://www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?3611986733", width: "68"}
-        %img.footer-top-appstore{src: "https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?3611986733"}
-        %img.footer-top-google{src: "https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?3611986733"}
-    %img{src: "https://www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?3611986733", width: "300"}
+        = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?3611986733", class: "footer-top-merukari", size: "68"
+        = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?3611986733", class: "footer-top-appstore"
+        = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?3611986733", class: "footer-top-google"
+    =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?3611986733", width: "300"
 .footer
   .footer__center
     .footer__center__box
@@ -112,20 +112,6 @@
   .footer-bottom
     .footer-bottom__logo
       = link_to "#", class: "footer-link footer-bottom-icon " do
-        %img{:alt => "mercari", :height => "33", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?575670517", :width => "124"}/
+        = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?575670517", size: "124*33", alt: "mercari"
       .footer-bottom-copyright
         © 2019 Mercari
-
-
-
-
-
-
-
-
-
-
-
-
-
-
