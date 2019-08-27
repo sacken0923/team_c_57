@@ -1,0 +1,99 @@
+.footer-link{
+  opacity: 0.7;
+  color:#fff;
+  text-decoration: none;
+}
+.footer-top{
+  background: url(https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?57038983);
+  height: 260px;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  &__box{
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 750px;
+    margin: 0 auto;
+    &__right{
+      align-items: center;
+      &__message{
+        font-size: 24px;
+        font-weight: bold;
+      }
+    &__guide{
+      font-size: 35px;
+      margin-top: 10px;
+    }
+    &__icons{
+      display: flex;
+      .footer-top-merukari{
+        margin-right:24px;
+      }
+      .footer-top-appstore{
+        margin-right: 20px;
+      }
+    }
+    }
+  }
+}
+
+.footer{
+  background-color: #212121;
+  color: #fff;
+  &__center{
+    display: flex;
+    width: 1020px;
+    margin: 0 auto;
+    &__box{
+      margin-top: 20px;
+      padding-right: 20px;
+      &__title{
+        font-size: 16px;
+        font-weight: 700;
+      }
+    .footer-bodys{
+      line-height: 2rem;
+      font-size: 12px;
+      .footer-icons{
+        margin-top: 20px;
+        letter-spacing: 5px;
+        .footer-icon{
+          font-size: 30px;
+          opacity: 1.0;
+        }
+      }
+    }
+    .footer-rules{
+      line-height: 2rem;
+      font-size: 12px;
+      display: flex;
+      &__side{
+        margin: 0 10px 0 10px;
+        .footer-line{
+          line-height: normal;
+            
+        }
+      }
+    }
+    }
+  }
+  .footer-bottom{
+    background-color: #212121;
+    display: flex;
+    &__logo{
+      display: flex;
+    margin: 30px auto 0;
+    width: 1020px;
+    padding-bottom: 20px;
+    .footer-bottom-icon{
+      opacity: 1;
+    }
+    .footer-bottom-copyright{
+      width: 745px;
+      text-align: center;
+      font-size: 12px;
+    }
+    }
+  }
+}
