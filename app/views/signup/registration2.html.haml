@@ -5,7 +5,7 @@
       = form_for  @user, url: registration3_signup_index_path, method: :get do |form|
         .form-group
           %label.phone-number 携帯電話の番号
-          = form.text_field :tell, placeholder: "携帯番号の入力"
+          = form.text_field :tell, placeholder: "携帯番号の入力",type:"tel" ,pattern:"[0-9]{3}-[0-9]{4}-[0-9]{4}" 
         %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
         %button.button-red SMSを送信する
         %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
