@@ -1,7 +1,7 @@
 class SignupController < ApplicationController
 
-  def registration0
-  end
+  # def registration0
+  # end
 
   def registration1
     @user = User.new

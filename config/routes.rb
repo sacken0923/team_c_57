@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 　root to: "homes#index"
   resources :items, only: [:new, :create , :edit, :update]
-  resources :signup do
+
+　resources :signup do
     collection do
-      get 'registration0'
       get 'registration1'
       get 'registration2'
       get 'registration3'
