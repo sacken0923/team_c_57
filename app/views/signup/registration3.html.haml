@@ -1,6 +1,6 @@
 .member-main__address
   %h2.member-main__title__text 住所入力
-  = form_for  @user, url: signup_index_path, method: :post do |form|
+  = form_for  @user, url:signup_index_path , method: :post do |form|
     .form-list
       %label　郵便番号
       %span.required 必須
@@ -25,4 +25,4 @@
       %label　電話
       %span.required 任意
       = form.text_field :home_tel, placeholder: "例) 09011111111"
-      = form.submit "次へ進む"
+      %button.button-red 次へ進む

@@ -29,7 +29,7 @@
   .member-main
     .member-main__title
       %h2.member-main__title__text 会員情報入力
-      = form_for  @user, url: registration2_signup_index_path, method: :get do |form|
+      = form_for @user, url: registration2_signup_index_path, method: :get do |form|
         .member-main__title__text__form
           .form-list
             %label　ニックネーム
@@ -65,6 +65,7 @@
             %span.required　必須
             .birthday-form
               .select-year
+                -# セレクトタグのformの書き方？:year.month.day
                 = form.select :year do
                   %option{value: ""} --
                   %option{:value => "2019"} 2019
@@ -121,7 +122,7 @@
                   %option{:value => "1968"} 1968
                   %option{:value => "1967"} 1967
                   %option{:value => "1966"} 1966
-                  %option{:value => "1965"} 1965
+                  %option{:vaplue => "1965"} 1965
                   %option{:value => "1964"} 1964
                   %option{:value => "1963"} 1963
                   %option{:value => "1962"} 1962
@@ -220,7 +221,7 @@
             「次へ進む」のボタンを押すことにより、
             = link_to "利用規約","#" 
             に同意したものとみなします
-            = form.submit "次へ進む"
+            = form.button "次へ進む"
           .form-group.text-last
             %p
               = link_to "本人情報の登録について" 

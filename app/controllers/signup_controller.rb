@@ -27,9 +27,9 @@ class SignupController < ApplicationController
     @user = User.new
   end
 
-  # def registration4
-  #   @user = User.new
-  # end
+  def registration4
+    
+  end
 
   def create
     @user = User.new(
@@ -44,21 +44,27 @@ class SignupController < ApplicationController
       year: session[:year],
       month: session[:month],
       day: session[:day],
-      tell: session[:tell]
+      tell: session[:tell],
+      prefecture: user_params[:prefecture],
+      postal_code: user_params[:postal_code],
+      city: user_params[:city],
+      address: user_params[:address],
+      building: user_params[:building],
+      home_tel: user_params[:home_tel]
     )
     if @user.save
       session[:id] = @user.id
-      redirect_to complete_signup_index_path 
+      redirect_to complete_signup_index_path
     else
-      registration1_signup_index_path
+      redirect_to registration0_signup_index_path
     end
 
     def complete
       sign_in User.find(session[:id]) unless user_signed_in?
-      redirect_to complete_signup_index_path 
     end
 
   end
+
 
 
   private
@@ -75,10 +81,10 @@ class SignupController < ApplicationController
         :kana_last_name,
         :year,
         :month,
+        :prefecture,
         :day,
         :tell,
         :postal_code,
-        :prefecture,
         :city,
         :address,
         :building,
