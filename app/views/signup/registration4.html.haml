@@ -2,7 +2,7 @@
   .card-registration__title
     %h2 クレジットカード情報入力
     .card-registration__title__information
-    = form_for  @user,url: signup_index_path  do |form|
+    = form_for  @user,url: signup_index_path,method: :post  do |form|
       .card-number
         %label　カード番号
         %span.required 必須
