@@ -4,7 +4,7 @@
     .form-list
       %label　郵便番号
       %span.required 必須
-      = form.text_field :postal_code, placeholder: "例) 123-4567"
+      = form.text_field :postal_code, placeholder: "例) 123-4567",pattern:"\d{3}-\d{4}"
     .form-list
       %label　都道府県
       %span.required 必須
