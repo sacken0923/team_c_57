@@ -28,7 +28,7 @@ class SignupController < ApplicationController
   end
 
   def registration4
-    
+    @user = User.new
   end
 
   def create
@@ -56,7 +56,7 @@ class SignupController < ApplicationController
       session[:id] = @user.id
       redirect_to complete_signup_index_path
     else
-      redirect_to registration0_signup_index_path
+      redirect_to registration1_signup_index_path
     end
 
     def complete
