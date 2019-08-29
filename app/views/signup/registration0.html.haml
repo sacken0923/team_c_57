@@ -15,15 +15,4 @@
         %button{class: "google-btn btn-list"}
           = fa_icon "google"
           Googleで登録する
-.login-footer
-  %nav
-    %ul.login-fotter
-      %li 
-        = link_to "プライバシーポリシー","#",{class: "login-fotter-link"}
-      %li
-        = link_to "メルカリ利用規約","#",{class: "login-fotter-link"}
-      %li
-        = link_to "特定商取引に関する表記","#",{class: "login-fotter-link"}
-  = link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?273499512",width:"80",height:"65"),"#",{class: "login-fotter-logo"}
-  %p
-    %small © 2019 Mercari
+= render 'footer'
