@@ -1,14 +1,16 @@
+= render 'header'
 .telephon-main
   .telephon-main__contents
     %h2.telephon-main__contents__text 電話番号の確認
     .telephon-main__contents__form
-      = form_for  @user, url: registration3_signup_index_path, method: :get do |form|
+      = form_for  @user, url: registration3_signup_index_path, method: :get do |f|
         .form-group
           %label.phone-number 携帯電話の番号
-          = form.text_field :tell, placeholder: "携帯番号の入力",type:"tel" ,pattern:"[0-9]{3}-[0-9]{4}-[0-9]{4}" 
+          = f.text_field :tell, placeholder: "携帯番号の入力",type:"tel" ,pattern:"[0-9]{3}-[0-9]{4}-[0-9]{4}" 
         %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-        %button.button-red SMSを送信する
+        = f.button "SMSを送信する",class:"button-red "
         %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
         .telephon-main__contents__form__bottom
           = link_to "電話番号の確認が必要な理由"
           = fa_icon "angle-right"
+= render 'footer'
