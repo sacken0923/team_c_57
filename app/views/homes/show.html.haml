@@ -1,0 +1,93 @@
+= render 'shared/header' 
+.mypage
+  .mypage__box
+    = render 'shared/side_bar'
+    .mypage__box__right
+      .mypage__box__right__background
+        = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", size: "60", class: "mypage-image"
+        .mypage-myname
+          = current_user.nickname
+        .mypage-number
+          %span
+            評価
+          %span
+            0
+          %span
+          出品数 0
+      .mypage-tabs
+        .mypage-tabs__content.mypage-white
+          お知らせ
+        .mypage-tabs__content.mypage-gray
+          やることリスト
+      .mypage-message
+        .mypage-message__icon
+          = image_tag "//static.mercdn.net/images/mercari_profile.png", size: "48"
+        .mypage-message__body
+          .mypage-message__body__message
+            事務局から個別メッセージ「ログイン通知」
+          .mypage-message__body__time
+            .mypage-history
+              = fa_icon "history"
+            .mypage-time
+              20時間前
+      .mypage-message
+        .mypage-message__icon
+          = image_tag "//static.mercdn.net/images/mercari_profile.png", size: "48"
+        .mypage-message__body
+          .mypage-message__body__message
+            3日後、20%還元お得チケットの有効期限が切れます！タップして詳細を確認しましょう。
+          .mypage-message__body__time
+            .mypage-history
+              = fa_icon "history"
+            .mypage-time
+              1 日前
+      .mypage-message
+        .mypage-message__icon
+          = image_tag "//static.mercdn.net/images/mercari_profile.png", size: "48"
+        .mypage-message__body
+          .mypage-message__body__message
+            事務局から個別メッセージ「【最大20%還元】今日から4日間だけ使えるお得チケットをプレゼント」
+          .mypage-message__body__time
+            .mypage-history
+              = fa_icon "history"
+            .mypage-time
+              1 日前
+      .mypage-message
+        .mypage-message__icon
+          = image_tag "//static.mercdn.net/images/mercari_profile.png", size: "48"
+        .mypage-message__body
+          .mypage-message__body__message
+            事務局から個別メッセージ「ログイン通知」
+          .mypage-message__body__time
+            .mypage-history
+              = fa_icon "history"
+            .mypage-time
+              1 日前
+      .mypage-message
+        .mypage-message__icon
+          = image_tag "//static.mercdn.net/images/mercari_profile.png", size: "48"
+        .mypage-message__body
+          .mypage-message__body__message
+            明日、P999還元お得チケットの有効期限が切れます！タップして詳細を確認しましょう。
+          .mypage-message__body__time
+            .mypage-history
+              = fa_icon "history"
+            .mypage-time
+              3 日前
+      .mypage-go-list
+        = link_to "#", class: "mypage-link" do
+          .mypage-go-list__box
+            一覧を見る
+      .mypage-items
+        購入した商品
+      .mypage-tabs
+        .mypage-tabs__content.mypage-white
+          取引中
+        .mypage-tabs__content.mypage-gray
+          過去の取引
+      .mypage-item-list
+        .mypage-item-list__message
+          取引中の商品がありません
+= render 'shared/footer' 
+= render 'shared/red_icon'
+

@@ -27,7 +27,7 @@
             .header-log-in__box
               ログイン
         - else 
-          = link_to destroy_user_session_path, method: :delete, class: 'header-news' do
+          = link_to "#", class: 'header-news' do
             %div
               = fa_icon "bell"
               %span.header-news__body
@@ -37,7 +37,7 @@
               = fa_icon "check"
               %span.header-todo__body
                 やる事リスト
-          = link_to '#', class: 'header-mypage' do
+          = link_to home_path(current_user), class: 'header-mypage' do
             .header-mypage__box
               %div
                 = image_tag '//static.mercdn.net/images/member_photo_noimage_thumb.png',class: "header-mypage__box__image",size: "32"

@@ -13,6 +13,6 @@ Rails.application.routes.draw do
       get 'complete' 
     end
   end
-  
   resources :sessions
+  resources :homes, only: [:show]
 end
