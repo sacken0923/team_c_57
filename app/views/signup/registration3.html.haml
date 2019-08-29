@@ -3,6 +3,16 @@
   %h2.member-main__title__text 住所入力
   = form_for  @user, url:signup_index_path , method: :post do |f|
     .form-list
+      %label　お名前
+      %span.required 必須
+      = f.text_field :address_last_name, placeholder: "例) 山田"
+      = f.text_field :address_first_name, placeholder: "例) 綾"
+    .form-list
+      %label　お名前カナ
+      %span.required 必須
+      = f.text_field :kana_address_last_name, placeholder: "例) ヤマダ"
+      = f.text_field :kana_address_first_name, placeholder: "例) アヤ"
+    .form-list
       %label　郵便番号
       %span.required 必須
       = f.text_field :postal_code, placeholder: "例) 123-4567"
