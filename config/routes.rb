@@ -13,4 +13,5 @@ Rails.application.routes.draw do
       get 'complete' 
     end
   end
+  resources :homes, only: [:show]
 end
