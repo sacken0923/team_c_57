@@ -20,14 +20,14 @@
           %span.header-brand__search
             ブランドから探す
         - unless user_signed_in?
-          = link_to registration1_signup_index_path , class: 'header-sign-UP' do
+          = link_to signup_index_path , class: 'header-sign-UP' do
             .header-sign-UP__box
               新規会員登録
-          = link_to '#', class: 'header-log-in' do
+          = link_to new_user_session_path, class: 'header-log-in' do
             .header-log-in__box
               ログイン
         - else 
-          = link_to '#', class: 'header-news' do
+          = link_to destroy_user_session_path, method: :delete, class: 'header-news' do
             %div
               = fa_icon "bell"
               %span.header-news__body
