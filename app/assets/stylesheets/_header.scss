@@ -97,6 +97,39 @@
           border-radius: 4px;
         }
       }
+      .header-news{
+        text-decoration: none;
+        margin-left: auto;
+        color: #ddd;
+        &__body{
+          color: #333;
+          font-size: 14px;
+        }
+      }
+      .header-todo{
+        text-decoration: none;
+        color: #ddd;
+        margin-left: 28px;
+        &__body{
+          color: #333;
+          font-size: 14px;
+        }
+      }
+      .header-mypage{
+        text-decoration: none;
+        color: #ddd;
+        margin-left: 28px;
+        &__box{
+          display: flex;
+          &__image{
+            border-radius: 50%;
+          }
+          &__body{
+            color: #333;
+            font-size: 14px;
+          }
+        }
+      }
       }
   }
   }

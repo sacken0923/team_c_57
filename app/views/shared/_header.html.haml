@@ -18,10 +18,29 @@
         = link_to '#', class: 'header-brand' do
           = fa_icon 'tag', class: 'header-brand__icon'
           %span.header-brand__search
-            ブランドから探す     
-        = link_to registration1_signup_index_path , class: 'header-sign-UP' do
-          .header-sign-UP__box
-            新規会委員登録
-        = link_to '#', class: 'header-log-in' do
-          .header-log-in__box
-            ログイン
+            ブランドから探す
+        - unless user_signed_in?
+          = link_to registration1_signup_index_path , class: 'header-sign-UP' do
+            .header-sign-UP__box
+              新規会委員登録
+          = link_to '#', class: 'header-log-in' do
+            .header-log-in__box
+              ログイン
+        - else 
+          = link_to '#', class: 'header-news' do
+            %div
+              = fa_icon "bell"
+              %span.header-news__body
+                お知らせ
+          = link_to "#", class: 'header-todo' do
+            %div
+              = fa_icon "check"
+              %span.header-todo__body
+                やる事リスト
+          = link_to '#', class: 'header-mypage' do
+            .header-mypage__box
+              %div
+                = image_tag '//static.mercdn.net/images/member_photo_noimage_thumb.png',class: "header-mypage__box__image",size: "32"
+              .header-mypage__box__body
+                マイページ
+                
