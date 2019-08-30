@@ -1,18 +1,18 @@
-.login-header
-  .h1
-    = link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?273499512",width:"185",height:"49"),"#"
-.login-main
-  .login-main__top
-    .h2.login-main__top__text 新規会員登録       
-    .login-main__form
-      .login-main__form__list
-        = link_to  registration1_signup_index_path ,{class: "e-mail-btn btn-list"} do
-          = fa_icon "envelope" 
-          メールアドレスで登録する
-        %button{class: "facebook-btn btn-list"}
-          = fa_icon "facebook-square" 
-          facebookで登録する
-        %button{class: "google-btn btn-list"}
-          = fa_icon "google"
-          Googleで登録する
-= render 'footer'
+.login
+  .login-header
+    = link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?273499512",width:"185",height:"49"),root_path,class:"tomo-image"
+  .login-main
+    .login-main__top
+      .h2.login-main__top__text 新規会員登録       
+      .login-main__form
+        .login-main__form__list
+          = link_to  registration1_signup_index_path ,{class: "e-mail-btn btn-list"} do
+            = fa_icon "envelope" ,class:"envelope"
+            %h2.tomo-text-1 メールアドレスで登録する
+          %button{class: "facebook-btn btn-list"}
+            = fa_icon "facebook-square",class:"facebook-square"
+            %h2.tomo-text-2 Facebookで登録する
+          %button{class: "google-btn btn-list"}
+            = fa_icon "google",class:"google"
+            %h2.tomo-text-3 Googleで登録する
+  = render 'footer'

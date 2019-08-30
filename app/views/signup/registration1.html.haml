@@ -3,8 +3,9 @@
   .member-main
     .member-main__title
       %h2.member-main__title__text 会員情報入力
+    .member-main__list
       = form_for @user, url: registration2_signup_index_path, method: :get do |f|
-        .member-main__title__text__form
+        .member-main__list__form
           .form-list
             %label　ニックネーム
             %span.required 必須
