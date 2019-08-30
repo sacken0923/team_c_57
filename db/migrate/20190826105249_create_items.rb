@@ -11,7 +11,6 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.integer  :like
       t.integer  :seller_id,  null:false
       t.integer  :buyer_id
-      t.references :brand,  foreign_key: true
       t.timestamps
     end
   end

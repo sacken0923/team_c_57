@@ -19,7 +19,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :address,             null: false
       t.string :building,            null: false
       t.string :home_tel     
-      # t.refernces :profile,          foreign_key: true 
+      t.string :address_last_name
+      t.string :address_first_name
+      t.string :kana_address_first_name
+      t.string :kana_address_last_name
 
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
