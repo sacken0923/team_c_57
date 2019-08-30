@@ -21,34 +21,11 @@ body{
           line-height: 1.5;
           text-align: center;
         }
-        .member-main__title__text__form{
-          max-width: 343px;
-          margin: 0 auto;
-            .form-list{
-              margin: 0;
-                label{
-                  font-weight: 600;
-                }
-                .required{
-                  background: #ea352d;
-                  margin: 0 0 0 8px;
-                  padding: 2px 4px;
-                  border-radius: 2px;
-                  color: #fff;
-                  font-size: 12px;
-                  vertical-align: top;
-                }
-                .tomo-input{
-                  width: 100%;
-                  margin: 8px 0 0;
-                  height: 48px;
-                  padding: 10px 16px 8px;
-                  border-radius: 4px;
-                  border: 1px solid #ccc;
-                  background: #fff;
-                  line-height: 1.5;
-                  font-size: 16px;
-                }
+        &__list{
+          border-top: 1px solid #f5f5f5; 
+          padding: 40px 40px 64px;
+            &__form{
+              height:1283px;
             }
         }
     }
