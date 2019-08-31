@@ -7,43 +7,43 @@
       = form_for @user, url: registration2_signup_index_path, method: :get do |f|
         .member-main__list__form
           .form-list
-            %label　ニックネーム
+            %label.form-list__tomo　ニックネーム
             %span.required 必須
-            = f.text_field :nickname, placeholder: "例) メルカリ太郎",class:"form-list__form",type:"text",calss:"tomo-input"
+            = f.text_field :nickname, placeholder: "例) メルカリ太郎",class:"form-list__form",type:"text"
           .form-list
-            %label　メールアドレス
+            %label.form-list__tomo　メールアドレス
             %span.required 必須
-            = f.text_field :email, placeholder: "PC・携帯どちらでも可",class:"form-list__form",type: "email",calss:"tomo-input"
+            = f.text_field :email, placeholder: "PC・携帯どちらでも可",class:"form-list__form",type: "email"
           .form-list
-            %label　パスワード
+            %label.form-list__tomo　パスワード
             %span.required 必須
-            = f.text_field :password, placeholder: "7文字以上",class:"form-list__form",type:"password",minlength:"7",calss:"tomo-input"
+            = f.text_field :password, placeholder: "7文字以上",class:"form-list__form",type:"password",minlength:"7"
           .form-list
-            %label　パスワード(確認)
+            %label.form-list__tomo　パスワード(確認)
             %span.required 必須
-            = f.text_field :password_confirmation, placeholder: "7文字以上",class:"form-list__form",type:"password",minlength:"7",calss:"tomo-input"
+            = f.text_field :password_confirmation, placeholder: "7文字以上",class:"form-list__form",type:"password",minlength:"7"
           .form-list
             %h3.person-text 本人確認
             %p.note-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
           .form-list
-            %label お名前(全角)
+            %label.form-list__tomo お名前(全角)
             %span.required 必須
-            = f.text_field :last_name, placeholder: "例) 孫",class:"form-list__form__harf"
-            = f.text_field :first_name, placeholder: "例) 悟空",class:"form-list__form__harf"
+            = f.text_field :last_name, placeholder: "例) 孫",class:"form-list__form harf"
+            = f.text_field :first_name, placeholder: "例) 悟空",class:"form-list__form harf"
           .form-list
-            %label お名前カナ(全角)
+            %label.form-list__tomo お名前カナ(全角)
             %span.required 必須
-            = f.text_field :kana_last_name, placeholder: "例) カカ",class:"form-list__form__harf"
-            = f.text_field :kana_first_name, placeholder: "例) ロット",class:"form-list__form__harf"
+            = f.text_field :kana_last_name, placeholder: "例) カカ",class:"form-list__form harf"
+            = f.text_field :kana_first_name, placeholder: "例) ロット",class:"form-list__form harf"
           .form-list
-            %label 生年月日
+            %label.form-list__tomo 生年月日
             %span.required　必須
             .birthday-form
               .select-year
                 = f.select :year do
                   = render 'year'
-                = fa_icon "chevron-down"
-                %span 年
+                = fa_icon "chevron-down",class:"chevron-down"
+                %spa.form-list__tomo 年
               .select-year.month
                 = f.select :month do
                   = render 'month'
@@ -56,7 +56,7 @@
                 %span 日
           %p.description
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-        .member-main__title__next
+        .member-main__title__form
           .form-group
             わたしはロボット
           .form-group

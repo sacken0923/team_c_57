@@ -1,0 +1,102 @@
+.sing-up__main{
+  display: block;
+    &__list{
+      max-width: none;
+      width: 456px;
+      margin: 0 auto;
+      background: #fff;
+      height: 731px;
+        &__top{
+          padding: 40px 64px;
+          text-align: center;
+            p{
+              font-size: 14px;
+            }
+            .blue-btn{
+              display: block;
+              margin: 8px 0 0;
+              border: 1px solid #0099e8;
+              background: #0099e8;
+              color: #fff;
+              line-height: 40px;
+              text-decoration:none;
+            }
+        }
+        &__icon{
+          padding: 32px 64px;
+          border-top: 1px solid #eee;
+            .button-list{
+              display: block;
+              width: 100%;
+              font-size: 14px;
+              border: 1px solid transparent;
+              text-align: center;
+              height: 50px;
+              position: relative;
+            }
+            .facebook-button{
+              background: #385185;
+              color: #fff;
+                .facebook-icon{
+                  position: absolute;
+                  top:10px;
+                  left:25px;
+                  font-size: 30px;
+                }
+            } 
+        }     
+            .google-buuton{
+              margin: 16px 0 0;
+              background: #fff;
+              border: #979797 solid 1px;
+              color: #333;
+                .google-icon{
+                  position: absolute;
+                  top:15px;
+                  left:30px;
+                  font-size: 20px;
+                }
+            }
+        
+        &__form{
+          padding: 24px 64px 32px;
+            .field{
+              margin: 0;
+                .input-tomo{
+                  width: 300px;
+                  height: 24px;
+                  padding: 10px 16px 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: #fff;
+                  line-height: 1.5;
+                  font-size: 16px;
+                }
+                .robboto {
+                  height: 74px;
+                  width: 300px;
+                  background-color:lightgray;
+                  margin: 24px 0 0;
+                }
+                .red-btn{
+                  margin: 24px 0 0;
+                  background: #ea352d;
+                  border: 1px solid #ea352d;
+                  color: #fff;
+                  display: block;
+                  line-height: 48px;
+                  font-size: 14px;
+                  cursor: pointer;
+                  text-align: center;
+                  width: 100%;
+                }
+                .password{
+                  display: block;
+                  margin: 40px 0 0;
+                  color: #0099e8;
+                  text-decoration: none;
+                }
+            }
+        }
+    }
+}
