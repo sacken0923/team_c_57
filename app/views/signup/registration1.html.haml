@@ -7,21 +7,21 @@
       = form_for @user, url: registration2_signup_index_path, method: :get do |f|
         .member-main__list__form
           .form-list
-            %label.form-list__tomo　ニックネーム
+            %label.form-list__tomo ニックネーム
             %span.required 必須
-            = f.text_field :nickname, placeholder: "例) メルカリ太郎",class:"form-list__form",type:"text"
+            = f.text_field :nickname, placeholder: "例) メルカリ太郎",class:"form-list__form"
           .form-list
-            %label.form-list__tomo　メールアドレス
+            %label.form-list__tomo メールアドレス
             %span.required 必須
-            = f.text_field :email, placeholder: "PC・携帯どちらでも可",class:"form-list__form",type: "email"
+            = f.text_field :email, placeholder: "PC・携帯どちらでも可",class:"form-list__form"
           .form-list
-            %label.form-list__tomo　パスワード
+            %label.form-list__tomo パスワード
             %span.required 必須
-            = f.text_field :password, placeholder: "7文字以上",class:"form-list__form",type:"password",minlength:"7"
+            = f.text_field :password, placeholder: "7文字以上",class:"form-list__form",type:"password"
           .form-list
-            %label.form-list__tomo　パスワード(確認)
+            %label.form-list__tomo パスワード(確認)
             %span.required 必須
-            = f.text_field :password_confirmation, placeholder: "7文字以上",class:"form-list__form",type:"password",minlength:"7"
+            = f.text_field :password_confirmation, placeholder: "7文字以上",class:"form-list__form",type:"password"
           .form-list
             %h3.person-text 本人確認
             %p.note-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
@@ -37,7 +37,7 @@
             = f.text_field :kana_first_name, placeholder: "例) ロット",class:"form-list__form harf"
           .form-list
             %label.form-list__tomo 生年月日
-            %span.required　必須
+            %span.required 必須
             .birthday-form
               .select-year
                 = f.select :year do
