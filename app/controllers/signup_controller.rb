@@ -1,16 +1,23 @@
 class SignupController < ApplicationController
+  before_action :validates_registration1, only: :registration2
+  before_action :validates_registration2, only: :registration3
+  before_action :validates_registration3, only: :create
+  
   def index
     
   end
 
-  # def registration0
-  # end
+  
 
   def registration1
     @user = User.new
   end
 
   def registration2
+    @user = User.new
+  end
+
+  def validates_registration1
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
     session[:password] = user_params[:password]
@@ -22,17 +29,112 @@ class SignupController < ApplicationController
     session[:year] = user_params[:year]
     session[:month] = user_params[:month]
     session[:day] = user_params[:day]
-    @user = User.new
+    @user = User.new(
+      nickname: session[:nickname],
+      email: session[:email],
+      password: session[:password],
+      password_confirmation: session[:password_confirmation],
+      first_name: session[:first_name],
+      last_name: session[:last_name],
+      kana_first_name: session[:kana_first_name],
+      kana_last_name: session[:kana_last_name],
+      year: session[:year],
+      month: session[:month],
+      day: session[:day],
+      tell: "aa",
+      address_last_name: "aa",
+      address_first_name: "aa",
+      kana_address_last_name: "aa",
+      kana_address_first_name: "aa",
+      prefecture: "aa",
+      postal_code: "aa",
+      city: "aa",
+      address: "aa",
+      building: "aa",
+      home_tel: "aa"
+    )
+    if @user.valid?(:validates_step1)
+      registration2_signup_index_path
+    else
+      render "signup/registration1" 
+    end
   end
 
   def registration3
-    session[:tell] = user_params[:tell]
+    # session[:tell] = user_params[:tell]
     @user = User.new
   end
+  
+  def validates_registration2
+    session[:tell] = user_params[:tell]
+    @user = User.new(
+      nickname: session[:nickname],
+      email: session[:email],
+      password: session[:password],
+      password_confirmation: session[:password_confirmation],
+      first_name: session[:first_name],
+      last_name: session[:last_name],
+      kana_first_name: session[:kana_first_name],
+      kana_last_name: session[:kana_last_name],
+      year: session[:year],
+      month: session[:month],
+      day: session[:day],
+      tell: session[:tell],
+      address_last_name: "aa",
+      address_first_name: "aa",
+      kana_address_last_name: "aa",
+      kana_address_first_name: "aa",
+      prefecture: "aa",
+      postal_code: "aa",
+      city: "aa",
+      address: "aa",
+      building: "aa",
+      home_tel: "aa"
+    )
+    if @user.valid?(:validates_registration2)
+      registration3_signup_index_path
+    else
+      render "signup/registration2" 
+    end
+  end
+
 
   def registration4
     @user = User.new
   end
+  
+  def validates_registration3
+    @user = User.new(
+      nickname: session[:nickname],
+      email: session[:email],
+      password: session[:password],
+      password_confirmation: session[:password_confirmation],
+      first_name: session[:first_name],
+      last_name: session[:last_name],
+      kana_first_name: session[:kana_first_name],
+      kana_last_name: session[:kana_last_name],
+      year: session[:year],
+      month: session[:month],
+      day: session[:day],
+      tell: session[:tell],
+      address_last_name: user_params[:address_last_name],
+      address_first_name: user_params[:address_first_name],
+      kana_address_last_name: user_params[:kana_address_last_name],
+      kana_address_first_name: user_params[:kana_address_first_name],
+      prefecture: user_params[:prefecture],
+      postal_code: user_params[:postal_code],
+      city: user_params[:city],
+      address: user_params[:address],
+      building: user_params[:building],
+      home_tel: user_params[:home_tel]
+    )
+    if @user.valid?(:validates_registration3)
+      complete_signup_index_path
+    else
+      render "signup/registration3" 
+    end
+  end
+  
 
   def create
     @user = User.new(
@@ -65,6 +167,8 @@ class SignupController < ApplicationController
     else
       redirect_to registration1_signup_index_path
     end
+
+
 
     def complete
       sign_in User.find(session[:id]) unless user_signed_in?
