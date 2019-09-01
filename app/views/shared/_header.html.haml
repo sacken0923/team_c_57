@@ -3,7 +3,7 @@
     .header__box__top
       .header-logo
         = link_to root_path  do
-          = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?273499512", alt: "mercari", height: "36", width: "134" 
+          = image_tag "logo.svg", alt: "mercari", height: "36", width: "134" 
       %form(action="#" class="header-search")
         %input(type="text" placeholder="何かお探しですか？" class="header-input")
         %label.header-icon
@@ -40,7 +40,7 @@
           = link_to home_path(current_user), class: 'header-mypage' do
             .header-mypage__box
               %div
-                = image_tag '//static.mercdn.net/images/member_photo_noimage_thumb.png',class: "header-mypage__box__image",size: "32"
+                = image_tag 'member_photo_noimage_thumb.png',class: "header-mypage__box__image",size: "32"
               .header-mypage__box__body
                 マイページ
                 
