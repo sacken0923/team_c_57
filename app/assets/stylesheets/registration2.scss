@@ -1,0 +1,71 @@
+.telephon-main{
+  display:block;
+    &__contents{
+      width:700px;
+      margin: 0 auto;
+      background-color: white;
+        &__text{
+          font-size: 22px;
+          text-align: center;
+          height: 95px;
+          line-height: 95px;
+          border-bottom: 1px solid #f5f5f5;
+          font-weight: bold;
+        }
+    }
+    &__form{
+      height: 403px;
+      background-color: white;
+      margin: 0 auto;
+      width: 700px;
+        &__list{
+          max-width: 343px;
+          margin: 0 auto;
+          padding-top:50px;
+            .form-group{
+                .phone-number{
+                  font-weight: 600;
+                  display: inline-block;
+                }
+                .phone-form{
+                  width: 100%;
+                  margin: 8px 0 0;
+                  height: 30px;
+                  padding: 10px 16px 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: #fff;
+                  line-height: 1.5;
+                  font-size: 16px;
+                }
+            }
+            p.tomo-message{
+              padding-top:20px;
+            }
+            .button-red{
+              margin-top: 32px;
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              border: 1px solid transparent;
+              -webkit-transition: all ease-out .3s;
+              transition: all ease-out .3s;
+              cursor: pointer;
+              text-align: center;
+            }
+            .kito-message{
+              margin: 8px 0 0;
+              line-height: 1.5;
+            }
+        }
+        .bule-message{
+          color:  #0099e8;
+          margin: 50px 30px 40px 350px;
+          width:200px;
+        }
+    }
+}
