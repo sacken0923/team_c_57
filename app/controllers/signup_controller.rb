@@ -2,7 +2,6 @@ class SignupController < ApplicationController
   before_action :validates_registration1, only: :registration2
   before_action :validates_registration2, only: :registration3
   before_action :validates_registration3, only: :create
-  
   def index
     
   end

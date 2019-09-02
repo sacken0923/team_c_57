@@ -9,19 +9,19 @@
           .form-list
             %label.form-list__tomo ニックネーム
             %span.required 必須
-            = f.text_field :nickname, placeholder: "例) メルカリ太郎",class:"form-list__form"
+            = f.text_field :nickname, placeholder: "例) メルカリ太郎",class:"form-list__form tomo"
           .form-list
             %label.form-list__tomo メールアドレス
             %span.required 必須
-            = f.text_field :email, placeholder: "PC・携帯どちらでも可",class:"form-list__form"
+            = f.text_field :email, placeholder: "PC・携帯どちらでも可",class:"form-list__form tomo"
           .form-list
             %label.form-list__tomo パスワード
             %span.required 必須
-            = f.text_field :password, placeholder: "7文字以上",class:"form-list__form",type:"password"
+            = f.text_field :password, placeholder: "7文字以上",class:"form-list__form tomo",type:"password"
           .form-list
             %label.form-list__tomo パスワード(確認)
             %span.required 必須
-            = f.text_field :password_confirmation, placeholder: "7文字以上",class:"form-list__form",type:"password"
+            = f.text_field :password_confirmation, placeholder: "7文字以上",class:"form-list__form tomo",type:"password"
           .form-list
             %h3.person-text 本人確認
             %p.note-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
@@ -43,29 +43,32 @@
                 = f.select :year do
                   = render 'year'
                 = fa_icon "chevron-down",class:"chevron-down"
-                %spa.form-list__tomo 年
+                %span 年
               .select-year.month
                 = f.select :month do
                   = render 'month'
-                = fa_icon "chevron-down"
+                = fa_icon "chevron-down",class:"chevron-down"
                 %span 月
               .select-year.day
                 = f.select :day do
                   = render 'day'
-                = fa_icon "chevron-down"
+                = fa_icon "chevron-down",class:"chevron-down"
                 %span 日
           %p.description
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-        .member-main__title__form
-          .form-group
-            わたしはロボット
-          .form-group
-            「次へ進む」のボタンを押すことにより、
-            = link_to "利用規約","#" 
-            に同意したものとみなします
-            = f.button "次へ進む"
+        .member-main__bottom
+          .form-list
+            .robotto
+              わたしはロボット
+          .form-list
+            %p.tomo-text-center
+              「次へ進む」のボタンを押すことにより、
+              %span 利用規約 
+              に
+            %p.tomo-text-center  同意したものとみなします
+            = f.button  "次へ進む", class:"btn-red"   
           .form-group.text-last
-            %p
+            %p.text-last__link
               = link_to "本人情報の登録について" 
               = fa_icon "angle-right"
   = render  "footer"
