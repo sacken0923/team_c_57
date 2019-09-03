@@ -1,0 +1,63 @@
+.member-main__address{
+  width:700px;
+  background-color:white;
+  margin: 0 auto;
+  height: 1283px;
+    .member-main__title__text{
+      font-size: 22px;
+      padding: 32px;
+      text-align: center;
+    }
+    .form-tomo{
+      padding: 40px 40px 64px;
+      background-repeat: no-repeat;
+      border-top: 1px solid #f5f5f5;
+        &__list{
+          max-width: 343px;
+          margin: 0 auto;
+            .form-list label{
+              font-weight: 600;
+              display: inline-block;
+              margin-bottom:0;
+            }
+            .required{
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              background: #ea352d;
+              color:white;
+              border-radius: 2px;
+            }
+            .address-tomo{
+              margin-bottom: 32px;
+                .address-form{
+                  width: 100%;
+                  margin: 8px 0 0;
+                  height: 28px;
+                  padding: 10px 16px 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: #fff;
+                  font-size: 16px;
+                }
+            }
+            .required-gray{
+            background-color:lightgrey;
+            color: white;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            }
+            .button-red{
+              margin-top: 32px;
+              background: #ea352d;
+              border: 1px solid;
+              color: #fff;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              margin-top:80px;
+            }
+        }
+    }
+}
