@@ -1,3 +1,3 @@
 class Item < ApplicationRecord
-  has_mny :photos
+  has_many :photos
 end
