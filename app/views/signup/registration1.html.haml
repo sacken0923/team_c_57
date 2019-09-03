@@ -7,65 +7,72 @@
       = form_for @user, url: registration2_signup_index_path, method: :get do |f|
         .member-main__list__form
           .form-list
-            %label.form-list__tomo　ニックネーム
+            %label.form-list__tomo ニックネーム
             %span.required 必須
-            = f.text_field :nickname, placeholder: "例) メルカリ太郎",class:"form-list__form",type:"text"
+            = f.text_field :nickname, placeholder: "例) メルカリ太郎",class:"form-list__form tomo"
           .form-list
-            %label.form-list__tomo　メールアドレス
+            %label.form-list__tomo メールアドレス
             %span.required 必須
-            = f.text_field :email, placeholder: "PC・携帯どちらでも可",class:"form-list__form",type: "email"
+            = f.text_field :email, placeholder: "PC・携帯どちらでも可",class:"form-list__form tomo"
           .form-list
-            %label.form-list__tomo　パスワード
+            %label.form-list__tomo パスワード
             %span.required 必須
-            = f.text_field :password, placeholder: "7文字以上",class:"form-list__form",type:"password",minlength:"7"
+            = f.text_field :password, placeholder: "7文字以上",class:"form-list__form tomo",type:"password"
           .form-list
-            %label.form-list__tomo　パスワード(確認)
+            %label.form-list__tomo パスワード(確認)
             %span.required 必須
-            = f.text_field :password_confirmation, placeholder: "7文字以上",class:"form-list__form",type:"password",minlength:"7"
+            = f.text_field :password_confirmation, placeholder: "7文字以上",class:"form-list__form tomo",type:"password"
           .form-list
             %h3.person-text 本人確認
             %p.note-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
           .form-list
             %label.form-list__tomo お名前(全角)
             %span.required 必須
-            = f.text_field :last_name, placeholder: "例) 孫",class:"form-list__form harf"
-            = f.text_field :first_name, placeholder: "例) 悟空",class:"form-list__form harf"
+            .form-list__name
+              = f.text_field :last_name, placeholder: "例) 孫",class:"form-list__form harf"
+              = f.text_field :first_name, placeholder: "例) 悟空",class:"form-list__form harf"
           .form-list
             %label.form-list__tomo お名前カナ(全角)
             %span.required 必須
-            = f.text_field :kana_last_name, placeholder: "例) カカ",class:"form-list__form harf"
-            = f.text_field :kana_first_name, placeholder: "例) ロット",class:"form-list__form harf"
+            .form-list__name
+              = f.text_field :kana_last_name, placeholder: "例) カカ",class:"form-list__form harf"
+              = f.text_field :kana_first_name, placeholder: "例) ロット",class:"form-list__form harf"
           .form-list
             %label.form-list__tomo 生年月日
-            %span.required　必須
+            %span.required 必須
             .birthday-form
               .select-year
+                = fa_icon "chevron-down",class:"chevron-down"
                 = f.select :year do
                   = render 'year'
-                = fa_icon "chevron-down",class:"chevron-down"
-                %spa.form-list__tomo 年
+              %span 年
               .select-year.month
+                = fa_icon "chevron-down",class:"chevron-down"
                 = f.select :month do
                   = render 'month'
-                = fa_icon "chevron-down"
-                %span 月
+              %span 月
               .select-year.day
+                = fa_icon "chevron-down",class:"chevron-down"
                 = f.select :day do
                   = render 'day'
-                = fa_icon "chevron-down"
-                %span 日
+              %span 日
           %p.description
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-        .member-main__title__form
-          .form-group
-            わたしはロボット
-          .form-group
-            「次へ進む」のボタンを押すことにより、
-            = link_to "利用規約","#" 
-            に同意したものとみなします
-            = f.button "次へ進む"
-          .form-group.text-last
-            %p
-              = link_to "本人情報の登録について" 
+        .member-main__bottom
+          .form-last
+            .g-recaptcha.signup-recaptcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
+              %div{:style => "width: 304px; height: 78px;"}
+                %div
+                  %iframe{:frameborder => "0", :height => "78", :name => "a-l2vonwx3yve", :role => "presentation", :sandbox => "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", :scrolling => "no", :src => "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=v1565591531251&size=normal&cb=1a6f0guo15z", :width => "304"}
+                %textarea#g-recaptcha-response.g-recaptcha-response{:name => "g-recaptcha-response", :style => "width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"}
+          .form-last
+            %p.tomo-text-center
+              「次へ進む」のボタンを押すことにより、
+              %span 利用規約に
+            %p.tomo-text-center  同意したものとみなします
+            = f.button  "次へ進む", class:"btn-red"   
+          .form-last
+            .form-last__link 
+              本人情報の登録について
               = fa_icon "angle-right"
   = render  "footer"
