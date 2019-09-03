@@ -3,9 +3,11 @@
   .complete-registration__title
     会員登録完了
   .complete-registration__main
-    ありがとうございます。会員登録が完了しました。
-  = link_to root_path do
-    %button.complete-registration__btn
-      メルカリをはじめる
+    ありがとうございます。
+    %p 会員登録が完了しました。
+    = link_to root_path do
+      %button.complete-registration__main__btn
+        メルカリをはじめる
+  .complete-registration__photo
 = render 'footer'
     
