@@ -1,0 +1,134 @@
+= render "signup/header-logo"
+.product-container
+  .product-container__main
+    = form_for @item do |f| 
+      %h2.product-container__main__head
+        商品の情報
+      .product-container__main__image
+        %h3.product-container__main__image__up
+          出品画像
+          %span.form-require  
+            必須
+        %p
+          最大10枚までアップロードできます。
+        -# = f.file_field 
+        .product-container__main__image__box 
+          %pre
+            ドラッグアンドドロップ
+            %span またはクリックしてダウンロード
+      .product-container__main__explain
+        .product-container__main__explain__a
+          %label
+            商品名
+            %span.form-require 
+              必須
+          = f.text_field :name, class: "product-container__main__explain__a__input", placeholder: "商品名 必須(40字まで)"
+        .product-container__main__explain__b
+          %label
+            商品の説明
+            %span.form-require 
+              必須
+          = f.text_area :description, class: "product-container__main__explain__b__input", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+
+      .product-container__main__detail
+        .product-container__main__detail__left
+          商品の詳細
+        .product-container__main__detail__right
+          .product-container__main__detail__right__a
+            %label
+              カテゴリー
+            %span.form-require 
+              必須
+          %select.select-default
+            %option ---
+            %option{:value => "1"} レディース
+            %option{:value => "2"} メンズ
+          .product-container__main__detail__right__b
+            %label
+              商品の状態
+            %span.form-require 
+              必須
+          %select.select-default
+            %option ---
+            %option{:value => "1"} 新品、未使用品
+            %option{:value => "2"} 未使用品に近い
+
+      .product-container__main__delivery
+        .product-container__main__delivery__left
+          配送について
+          = link_to " ", class: "question" do
+            ?
+        .product-container__main__delivery__right
+          .product-container__main__delivery__right__a
+            %label
+              配送料の負担
+            %span.form-require 
+              必須
+          %select.select-default
+            %option ---
+            %option{:value => "1"} 送料込み(出品者負担)
+            %option{:value => "2"} 着払い(購入者負担)
+          .product-container__main__delivery__right__b
+            %label
+            発送元の地域
+            %span.form-require 
+              必須
+          %select.select-default
+            %option ---
+            %option{:value => "1"} 北海道
+            %option{:value => "2"} 青森
+          .product-container__main__delivery__right__c
+            %label
+              発送までの日数
+            %span.form-require 
+              必須
+          %select.select-default
+            %option ---
+            %option{:value => "1"} 1〜2日で発送
+            %option{:value => "2"} 2〜3日で発送
+
+      .product-container__main__price
+        .product-container__main__price__left
+          販売価格(300〜9,999,999)
+          = link_to " ", class: "question" do
+            ?
+        .product-container__main__price__right
+          .product-container__main__price__right__up
+            .product-container__main__price__right__up__a
+              %label
+                価格
+              %span.form-require 
+                必須
+            .product-container__main__price__right__up__b
+              %p ¥
+              = f.text_field :price, class: "product-container__main__price__right__up__b__input", placeholder: "例）300"
+          .product-container__main__price__right__middle
+            .product-container__main__price__right__middle__a
+              %p 販売手数料(10%)
+            .product-container__main__price__right__middle__b
+              %p -
+          .product-container__main__price__right__down
+            .product-container__main__price__right__down__a
+              %p 販売利益
+            .product-container__main__price__right__down__b
+              %p -
+      .product-container__main__sell
+        .product-container__main__sell__up
+          %p
+            = link_to "禁止されている出品", "", class: "jump"
+            、
+            = link_to "行為", "", class: "jump"
+            を必ずご確認ください。
+            %br
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            = link_to "偽ブランドの販売", "", class: "jump"
+            は犯罪であり処罰される可能性があります。
+            %br
+            また、出品をもちまして
+            = link_to "加盟店規約", "", class: "jump"
+            に同意したことになります。
+        .product-container__main__sell__middle
+          = f.submit "出品する", class: "product-container__main__sell__middle__submit"
+        .product-container__main__sell__down
+          = link_to "もどる", "root_path", class: "product-container__main__sell__down__back"
+= render "signup/footer"
