@@ -6,7 +6,7 @@
       .mypage__box__right__background
         = image_tag "member_photo_noimage_thumb.png", size: "60", class: "mypage-image"
         .mypage-myname
-          = current_user.nickname
+          = @user.nickname
         .mypage-number
           %span
             評価

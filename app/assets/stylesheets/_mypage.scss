@@ -106,6 +106,10 @@
     }
     .mypage-item-list{
       height: 236px;
+      background-image: image-url("logo-gray-icon-1.svg");
+      background-repeat: no-repeat;
+      background-position: center 40px;
+      background-size: 78px 85px;
       background-color: #fff;
       text-align: center;
       &__message{

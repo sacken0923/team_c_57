@@ -1,0 +1,11 @@
+= render 'shared/header' 
+.mypage
+  .mypage__box
+    = render 'shared/side_bar'
+    .log-out
+      .log-out__box
+        = link_to destroy_user_session_path,method: :delete, class: "log-out-link" do
+          .log-out-btn
+            ログアウト
+= render 'shared/footer' 
+= render 'shared/red_icon'
