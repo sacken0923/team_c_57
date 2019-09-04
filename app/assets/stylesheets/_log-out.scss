@@ -1,0 +1,18 @@
+.log-out{
+  width:700px;
+  &__box{
+    padding:64px;
+    background-color: #fff;
+    .log-out-link{
+      text-decoration: none;
+        .log-out-btn{
+          background-color: #ea352d;
+          color: #fff;
+          line-height: 50px;
+          text-align: center;
+          width: 320px;
+          margin: 0 auto;
+        }
+    }
+  }
+}

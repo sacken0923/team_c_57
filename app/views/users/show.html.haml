@@ -1,0 +1,17 @@
+= render 'shared/header' 
+.mypage
+  .mypage__box
+    = render 'shared/side_bar'
+    .profile
+      %form.profile__box
+        .profile__box__text
+          プロフィール
+        .profile__box__image
+          = image_tag "member_photo_noimage_thumb.png",class: "profile-image",size: "60"
+          %input{type: "text", placeholder: "例)カカロット", value: "#{@user.nickname}", class: "profile-nickname"}
+        .profile__box__box
+          %textarea.profile-text{placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+          %button.profile-button{type: "submit"}
+            変更する
+= render 'shared/footer' 
+= render 'shared/red_icon'
