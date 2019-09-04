@@ -9,7 +9,6 @@
       font-weight: bold;
     }
     &__image{
-      padding-left: 200px;
       height: 156px;
       background-image: image-url("user-bg.jpg");
       display: flex;
@@ -21,7 +20,7 @@
         border-radius: 50%;
       }
       .profile-nickname{
-        border: none;
+        border: #ddd solid 1px;
         line-height: 48px;
         margin-left: 8px;
         font-size: 16px;
