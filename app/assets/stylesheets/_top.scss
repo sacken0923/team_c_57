@@ -8,7 +8,7 @@
   text-align: center;
   &__banner{
     height: 390px;
-    background: url(index_keyvisual.png);
+    background-image: image-url("index_keyvisual.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
