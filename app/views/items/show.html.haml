@@ -17,7 +17,7 @@
             出品者
           .detail-info__box__right
             = link_to "#", class: "detail-link detail-info__box__right__link" do
-              カカロット
+              = @user.nickname
               %br
             = fa_icon "thumbs-up", class: "detail-like"
             %span
@@ -65,7 +65,7 @@
             配送元地域
           .detail-info__box__right
             = link_to "#", class: "detail-link detail-info__box__right__link" do
-              愛知県
+              = @user.prefecture
         .detail-info__box
           .detail-info__box__left
             発送日の目安
