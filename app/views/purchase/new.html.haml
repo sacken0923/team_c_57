@@ -1,0 +1,55 @@
+= render "signup/header-logo"
+.buy-item-container
+  .buy-item-container__main
+    = form_for @item do |f|
+      %h2.buy-item-container__main__head
+        購入内容の確認
+      .buy-item-box
+        .buy-item-box__bodys
+          = image_tag "kakarotto.jpg", size: "64"
+          .buy-item-box__bodys__name
+            新品 4L XXXLくまモン 大きいサイズ Tシャツ ホワイト
+        .buy-item-box__price
+          .buy-item-box__price__left
+            ¥ 1,280
+          .buy-item-box__price__right
+            送料込み
+        .buy-item-box__point
+          ポイントはありません
+        .buy-item-box__total
+          .buy-item-box__total__left
+            支払い金額
+          .buy-item-box__total__right
+            ¥ 1,280
+        .buy-item-box__purchase
+          = f.submit "購入する", class: "submit"
+  .buy-item-container__case
+    .buy-item-container__case__box
+      .buy-item-container__case__box__top
+        配送先
+      .buy-item-container__case__box__name
+        〒 郵便番号 
+        %br
+        住所 
+        %br
+        山田
+      .buy-item-container__case__box__edit
+        =link_to "", class:"ships" do
+          %span 変更する
+          = fa_icon "chevron-right", class: "ships"
+  .buy-item-container__pay
+    .buy-item-container__pay__box
+      .buy-item-container__pay__box__top
+        支払い方法
+      .buy-item-container__pay__box__name
+        〒 郵便番号 
+        %br
+        住所 
+        %br
+        山田
+      .buy-item-container__case__pay__edit
+        =link_to "", class:"ships" do
+          %span 変更する
+          = fa_icon "chevron-right", class: "ships"
+  
+= render "signup/footer"
