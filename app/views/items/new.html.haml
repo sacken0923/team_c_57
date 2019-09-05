@@ -3,7 +3,7 @@
   .product-container__main
     = form_for @item do |f| 
       %h2.product-container__main__head
-        商品の情報
+        商品の情報を入力
       .product-container__main__image
         %h3.product-container__main__image__up
           出品画像
@@ -70,7 +70,7 @@
             %option{:value => "2"} 着払い(購入者負担)
           .product-container__main__delivery__right__b
             %label
-            発送元の地域
+              発送元の地域
             %span.form-require 
               必須
           %select.select-default
