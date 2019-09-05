@@ -60,7 +60,6 @@ class SignupController < ApplicationController
   end
 
   def registration3
-    # session[:tell] = user_params[:tell]
     @user = User.new
   end
   

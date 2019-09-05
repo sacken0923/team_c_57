@@ -1,22 +1,23 @@
 class CardsController < ApplicationController
 
   require 'payjp'
-
+  
   def new
     card = Card.where(user_id: current_user.id)
-    redirect_to action: "show" if card.exists?
+    redirect_to action: "show" if card.exists?  # .exists? データが存在してるか確かめる
   end
-
-  def pay
-    Payjp.api_key = ENV['sk_test_23399b578b04e86030b42f8f'] 
-    if params['payjp-token'].blank?
-    redirect_to action: 'new'
+  
+  def pay #payjpとCardのデータベース作成を実施
+    Payjp.api_key = "sk_test_23399b578b04e86030b42f8f" #テスト秘密鍵をセット
+    if params['payjp-token'].blank? #blank? nilまたは空のオブジェクトを判定できる。
+      redirect_to action: "new"
     else
       customer = Payjp::Customer.create(
-        crad: params['payjp-token'],
+        email: current_user.email,
+        card: params['payjp-token'],
         metadata: {user_id: current_user.id}
       )
-      @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)   
+      @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
         redirect_to action: "show"
       else
@@ -24,12 +25,12 @@ class CardsController < ApplicationController
       end
     end
   end
-  
-  def delete
+
+  def delete #PayjpとCardデータベースを削除します
     card = Card.where(user_id: current_user.id).first
     if card.blank?
     else
-      Payjp.api_key = ENV['sk_test_23399b578b04e86030b42f8f']
+      Payjp.api_key = "sk_test_23399b578b04e86030b42f8f"
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
       card.delete
@@ -37,12 +38,12 @@ class CardsController < ApplicationController
       redirect_to action: "new"
   end
 
-  def show
+  def show #Cardのデータpayjpに送り情報を取り出します
     card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new" 
     else
-      Payjp.api_key = ENV['sk_test_23399b578b04e86030b42f8f']
+      Payjp.api_key = "sk_test_23399b578b04e86030b42f8f"
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
