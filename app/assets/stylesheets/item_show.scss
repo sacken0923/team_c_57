@@ -1,0 +1,216 @@
+.detail-link{
+  text-decoration: none;
+  color: #0099e8;
+  font-size: 14px;
+}
+.detail{
+  background-color: #eee;
+  padding-top: 40px;
+  &__box{
+    box-sizing: border-box;
+    background-color: #fff;
+    width: 700px;
+    margin: 0 auto;
+    padding: 24px 40px 40px;
+    &__title{
+      line-height: 2;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    &__list{
+      display: flex;
+      .detail-main-image{
+        display: flex;
+      }
+    .detail-image-list{
+      background-color: #eee;
+      display:flex;
+        .detail-images{
+          display: block;
+        }
+        .detail-opa{
+          opacity: 0.4;
+        }
+    }
+    .detail-info{
+      margin-left: auto;
+      color: #333;
+      font-size: 14px;
+      &__box{
+        display:flex;
+        &__left{
+          padding: 8px;
+          width: 117px;
+          border: #f5f5f5 solid 1px;
+          background-color: #fafafa;
+          
+        }
+        &__right{
+          box-sizing: border-box;
+          padding: 8px;
+          width: 182px;
+          border: #f5f5f5 solid 1px;
+          .detail-like{
+            font-size: 14px;
+          }
+        }
+        
+      }
+    }
+    }
+    .detail-price{
+      text-align: center;
+      margin-top: 24px;
+      &__price{
+        font-size: 50px;
+        font-weight: 600;
+      }
+      &__tax{
+        font-size: 10px;
+      }
+    }
+    .detail-buy__btn{
+      margin-top: 16px;
+      background-color: #ea352d;
+      color: #fff;
+      text-align: center;
+      font-size: 24px;
+      line-height: 60px;
+      font-weight: 600;
+    }
+    .detail-text{
+      padding-top: 32px;
+      padding-bottom: 16px;
+      font-size: 18px;
+      font-weight: 200;
+    }
+    .detail-like-btn{
+      padding: 8px 16px;
+      border-radius: 40px;
+      font-size: 14px;
+      background-color: #f5f5f5;
+      border: none;
+      &__heart{
+        color: #ddd;
+      }
+    }
+    .detail-report{
+      background-color: #f5f5f5;
+      padding: 8px 16px;
+      color: #333;
+      border-radius: 40px;
+      margin-left:16px;
+    }
+    .detail-right{
+      float: right;
+      display: inline-block;
+    }
+  }
+  .detail-comment-box{
+    padding:24px ;
+    box-sizing: border-box;
+    background-color: #fff;
+    width: 700px;
+    margin: 10px auto 0;
+    &__message{
+      box-sizing: border-box;
+      background-color: #fff6de;
+      font-size: 14px;
+      padding: 8px;
+    }
+    .detail-text{
+      box-sizing: border-box;
+      margin-top: 8px;
+      padding: 10px;
+      width: 100%;
+      border: #ddd solid 1px;
+      height: 100px;
+    }
+    .detail-btn{
+      width: 100%;
+      line-height: 50px;
+      border: none;
+      background-color: #aaa;
+      font-size: 14px;
+      color: #fff;
+    }
+  }
+  .detail-nav{
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 24px;
+    .detail-nav__before{
+      float: left;
+    }
+    .detail-nav__after{
+      float: right;
+    }
+  }
+  .detail-nav:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .detail__icons{
+    width: 700px;
+    background-color: #fff;
+    text-align: center;
+    margin: 24px auto;
+    padding: 80px 0 24px;
+    .detail-icon{
+      font-size: 35px;
+      margin: 0 15px;
+    }
+    .detail-facebook{
+      color: blue;
+    }
+    .detail-instagram{
+      color: red;
+    }
+  }
+  &__other{
+    width:700px;
+    margin: 0 auto 30px;
+    &__link{
+      font-size: 22px;
+      font-weight: bold;
+    }
+    &__items{
+      margin: 15px 0 15px;
+      display: flex;
+      justify-content: space-between;
+      .detail-item{
+        width: 220px;
+        background-color: #fff;
+        &__description{
+          box-sizing: border-box;
+          padding: 16px;
+          .detail-item__name{
+            color: #333;
+            height: 3em;
+            line-height: 1.5;
+            overflow: hidden;
+            font-weight: 200;
+            font-size: 16px;
+          }
+          .detail-item__price{
+            color: #333;
+            display: flex;
+            &__price{
+              font-weight: 600;
+            }
+          .detail-icon{
+            color: #ddd;
+            margin-left: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__bottom{
+    height: 70px;
+  }
+
+}

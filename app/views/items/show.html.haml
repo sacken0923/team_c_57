@@ -1,0 +1,283 @@
+= render 'shared/header' 
+.detail
+  .detail__box
+    .detail__box__title
+      = @item.name
+    .detail__box__list
+      %div
+        = image_tag "#{@item.photos[0].image}", size: "300", class: "detail-main-image"
+        .detail-image-list
+          - @item.photos.each do |photo|
+            = image_tag "#{photo.image}", size: "60", class: "detail-images"
+            -# = image_tag "polo2.jpg", size: "60", class: "detail-images detail-opa"
+            -# = image_tag "polo3.jpg", size: "60", class: "detail-images detail-opa"
+      .detail-info
+        .detail-info__box
+          .detail-info__box__left
+            出品者
+          .detail-info__box__right
+            = link_to "#", class: "detail-link detail-info__box__right__link" do
+              = @user.nickname
+              %br
+            = fa_icon "thumbs-up", class: "detail-like"
+            %span
+              116
+        .detail-info__box
+          .detail-info__box__left
+            カテゴリー
+          .detail-info__box__right
+            = link_to "#", class: "detail-link" do
+              メンズ
+              %br
+            = link_to "#", class: "detail-link" do
+              ＞トップス
+              %br
+            = link_to "#", class: "detail-link" do
+              ＞ポロシャツ
+        .detail-info__box
+          .detail-info__box__left
+            ブランド
+          .detail-info__box__right
+            = link_to "#", class: "detail-link detail-info__box__right__link" do
+              supreme
+        .detail-info__box
+          .detail-info__box__left
+            商品のサイズ
+          .detail-info__box__right
+            L
+        .detail-info__box
+          .detail-info__box__left
+            商品の状態
+          .detail-info__box__right
+            傷や汚れあり
+        .detail-info__box
+          .detail-info__box__left
+            配送料の負担
+          .detail-info__box__right
+            送料込み(出品者負担)
+        .detail-info__box
+          .detail-info__box__left
+            配送の方法
+          .detail-info__box__right
+            ゆうゆうメルカリ便
+        .detail-info__box
+          .detail-info__box__left
+            配送元地域
+          .detail-info__box__right
+            = link_to "#", class: "detail-link detail-info__box__right__link" do
+              = @user.prefecture
+        .detail-info__box
+          .detail-info__box__left
+            発送日の目安
+          .detail-info__box__right
+            2~3日で発送
+    .detail-price
+      %span.detail-price__price
+        = "¥#{@item.price}"
+      %span.detail-price__tax
+        (税込)
+      %span.detail-price__message
+        送料込み
+    = link_to "#", class: "detail-link" do
+      .detail-buy__btn
+        購入画面に進む
+    .detail-text
+      ラルフローレン ポロシャツ  メンズLサイズ
+      %br
+      30年前購入のビンテージ品です。
+      %br
+      日本製 サイズは日本サイズのL〜M相当です。
+      %br
+      保管状態も良いと思います。写真でご判断をお願いします。
+      %br
+      最終価格にてお値引きご勘弁下さい。
+      %br
+      ☆プロフィールご覧下さい
+    %div
+      %button.detail-like-btn
+        = fa_icon "heart", class: "detail-like-btn__heart"
+        %span
+          いいね！
+        %span
+          = @item.like
+      = link_to "#",class: "detail-link detail-report" do
+        =fa_icon "flag"
+        %span
+          不適切な商品の報告
+      = link_to "#", class: "detail-link detail-right" do
+        あんしん・あんぜんへの取り組み
+  .detail-comment-box
+    %form
+      .detail-comment-box__message
+        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります
+      %textarea.detail-text
+      %button.detail-btn
+        コメントする
+  .detail-nav
+    = link_to "#", class: "detail-nav__before detail-link" do
+      ＜ラルフローレン ポロシャツ
+    = link_to "#", class: "detail-link detail-nav__after" do
+      コストコ マッシュポテト＞
+  .detail__icons
+    = link_to "#", class: "detail-link" do
+      =fa_icon "facebook", class: "detail-icon detail-facebook"
+    = link_to "#", class: "detail-link" do
+      =fa_icon "twitter", class: "detail-icon"
+    = link_to "#", class: "detail-link" do
+      =fa_icon "instagram", class: "detail-icon detail-instagram"
+  .detail__other
+    = link_to "#", class: "detail-link detail__other__link" do
+      カカロットさんのその他の商品
+    .detail__other__items
+      = link_to "#", class: "detail-link" do
+        .detail-item
+          = image_tag "kakarotto.jpg", size: "220"
+          .detail-item__description
+            .detail-item__name
+              カカロット
+            .detail-item__price
+              .detail-item__price__price
+                ￥5,000
+              = fa_icon "heart", class: "detail-icon"
+              .detail-like
+                14
+      = link_to "#", class: "detail-link" do
+        .detail-item
+          = image_tag "kakarotto.jpg", size: "220"
+          .detail-item__description
+            .detail-item__name
+              カカロット
+            .detail-item__price
+              .detail-item__price__price
+                ￥5,000
+              = fa_icon "heart", class: "detail-icon"
+              .detail-like
+                14
+      = link_to "#", class: "detail-link" do
+        .detail-item
+          = image_tag "kakarotto.jpg", size: "220"
+          .detail-item__description
+            .detail-item__name
+              カカロット
+            .detail-item__price
+              .detail-item__price__price
+                ￥5,000
+              = fa_icon "heart", class: "detail-icon"
+              .detail-like
+                14
+    .detail__other__items
+      = link_to "#", class: "detail-link" do
+        .detail-item
+          = image_tag "kakarotto.jpg", size: "220"
+          .detail-item__description
+            .detail-item__name
+              カカロット
+            .detail-item__price
+              .detail-item__price__price
+                ￥5,000
+              = fa_icon "heart", class: "detail-icon"
+              .detail-like
+                14
+      = link_to "#", class: "detail-link" do
+        .detail-item
+          = image_tag "kakarotto.jpg", size: "220"
+          .detail-item__description
+            .detail-item__name
+              カカロット
+            .detail-item__price
+              .detail-item__price__price
+                ￥5,000
+              = fa_icon "heart", class: "detail-icon"
+              .detail-like
+                14
+      = link_to "#", class: "detail-link" do
+        .detail-item
+          = image_tag "kakarotto.jpg", size: "220"
+          .detail-item__description
+            .detail-item__name
+              カカロット
+            .detail-item__price
+              .detail-item__price__price
+                ￥5,000
+              = fa_icon "heart", class: "detail-icon"
+              .detail-like
+                14
+    .detail__other
+    = link_to "#", class: "detail-link detail__other__link" do
+      その他 （おもちゃ・ホビー・グッズ） その他の商品
+    .detail__other__items
+      = link_to "#", class: "detail-link" do
+        .detail-item
+          = image_tag "kakarotto.jpg", size: "220"
+          .detail-item__description
+            .detail-item__name
+              カカロット
+            .detail-item__price
+              .detail-item__price__price
+                ￥5,000
+              = fa_icon "heart", class: "detail-icon"
+              .detail-like
+                14
+      = link_to "#", class: "detail-link" do
+        .detail-item
+          = image_tag "kakarotto.jpg", size: "220"
+          .detail-item__description
+            .detail-item__name
+              カカロット
+            .detail-item__price
+              .detail-item__price__price
+                ￥5,000
+              = fa_icon "heart", class: "detail-icon"
+              .detail-like
+                14
+      = link_to "#", class: "detail-link" do
+        .detail-item
+          = image_tag "kakarotto.jpg", size: "220"
+          .detail-item__description
+            .detail-item__name
+              カカロット
+            .detail-item__price
+              .detail-item__price__price
+                ￥5,000
+              = fa_icon "heart", class: "detail-icon"
+              .detail-like
+                14
+    .detail__other__items
+      = link_to "#", class: "detail-link" do
+        .detail-item
+          = image_tag "kakarotto.jpg", size: "220"
+          .detail-item__description
+            .detail-item__name
+              カカロット
+            .detail-item__price
+              .detail-item__price__price
+                ￥5,000
+              = fa_icon "heart", class: "detail-icon"
+              .detail-like
+                14
+      = link_to "#", class: "detail-link" do
+        .detail-item
+          = image_tag "kakarotto.jpg", size: "220"
+          .detail-item__description
+            .detail-item__name
+              カカロット
+            .detail-item__price
+              .detail-item__price__price
+                ￥5,000
+              = fa_icon "heart", class: "detail-icon"
+              .detail-like
+                14
+      = link_to "#", class: "detail-link" do
+        .detail-item
+          = image_tag "kakarotto.jpg", size: "220"
+          .detail-item__description
+            .detail-item__name
+              カカロット
+            .detail-item__price
+              .detail-item__price__price
+                ￥5,000
+              = fa_icon "heart", class: "detail-icon"
+              .detail-like
+                14
+  .detail__bottom
+= render 'shared/footer'

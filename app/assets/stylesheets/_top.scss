@@ -8,7 +8,7 @@
   text-align: center;
   &__banner{
     height: 390px;
-    background: url(index_keyvisual.png);
+    background-image: image-url("index_keyvisual.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -29,6 +29,9 @@
         font-size: 22px;
         font-weight: bold;
         margin: 26px 11px;
+        &:hover{
+          text-decoration: underline;
+        }
       }
     }
     .top-items{
@@ -38,6 +41,9 @@
         background-color: #fff;
         width: 213px;
         margin-left:16px;
+        &:hover{
+          border: #0099e8 solid 1px;
+        }
         .top-image{
           width: 213Px;
           height: 213px;
@@ -75,6 +81,9 @@
     &__all{
       color: #0099e8;
       font-size: 14px;
+      &:hover{
+        text-decoration: underline;
+      }
     }
   }
   }

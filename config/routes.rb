@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "homes#index"
-  resources :items, only: [:new, :create , :edit, :update] 
-  resources :purchases, only: [:new] 
 
+  resources :items, only: [:new, :create , :edit, :update, :show]
+  resources :users, only: [:show, :index]
+　resources :purchases, only: [:new] 
+  
   resources :signup do
     collection do
       get 'registration1'
@@ -14,7 +16,7 @@ Rails.application.routes.draw do
       get 'complete' 
     end
   end
-  resources :homes, only: [:show]
+  resources :homes, only: [:show, :edit]
   resources :cards, only: [:new, :show] do
     collection do
       post 'show', to: 'cards#show'

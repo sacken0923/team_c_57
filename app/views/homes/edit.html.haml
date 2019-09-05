@@ -1,0 +1,69 @@
+= render 'shared/header' 
+- breadcrumb :info
+= render 'shared/breadcrumbs'
+.mypage
+  .mypage__box
+    = render 'shared/side_bar'
+    .info
+      .info__box
+        .info__box__title
+          本人情報の登録
+        = form_for '#', html: {class: "info__form"} do |f|
+          .info-message
+            お客さまの本人情報をご登録ください。
+            %br
+            登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          = link_to "#", class: "info-link" do
+            .info-up
+              本人確認書類のアップロードについて＞
+          .info-group
+            .info-group__top
+              お名前
+            .info-group__bottom
+              = "#{@user.last_name}#{@user.first_name}"
+          .info-group
+            .info-group__top
+              お名前カナ
+            .info-group__bottom
+              = "#{@user.kana_last_name}#{@user.kana_first_name}"
+          .info-group
+            .info-group__top
+              生年月日
+            .info-group__bottom
+              = "#{@user.year}/#{@user.month}/#{@user.day}"
+          .info-group
+            .info-group__top
+              郵便番号
+              %span.info-any
+                任意
+            %input{placeholder: "例）1234567", class: "info-input"}
+          .info-group
+            .info-group__top
+              都道府県
+              %span.info-any
+                任意
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: 'info-select'
+          .info-group
+            .info-group__top
+              市区町村
+              %span.info-any
+                任意
+            %input{placeholder: "例）横浜市緑区", class: "info-input"}
+          .info-group
+            .info-group__top
+              番地
+              %span.info-any
+                任意
+            %input{placeholder: "例）青山1-1-1", class: "info-input"}
+          .info-group
+            .info-group__top
+              建物名
+              %span.info-any
+                任意
+            %input{placeholder: "例）東京タワー", class: "info-input"}
+          %input.info-send{type: "submit",value: "登録する"}
+          .info-bottom
+            = link_to "#", class: "info-link" do
+              本人情報の登録について＞
+= render 'shared/footer' 
+= render 'shared/red_icon'
