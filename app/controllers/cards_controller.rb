@@ -8,12 +8,11 @@ class CardsController < ApplicationController
   end
   
   def pay #payjpとCardのデータベース作成を実施
-    Payjp.api_key = "sk_test_23399b578b04e86030b42f8f" #テスト秘密鍵をセット
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"] #テスト秘密鍵をセット
     if params['payjp-token'].blank? #blank? nilまたは空のオブジェクトを判定できる。
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(
-        email: current_user.email,
         card: params['payjp-token'],
         metadata: {user_id: current_user.id}
       )
@@ -30,7 +29,7 @@ class CardsController < ApplicationController
     card = Card.where(user_id: current_user.id).first
     if card.blank?
     else
-      Payjp.api_key = "sk_test_23399b578b04e86030b42f8f"
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
       card.delete
@@ -43,7 +42,7 @@ class CardsController < ApplicationController
     if card.blank?
       redirect_to action: "new" 
     else
-      Payjp.api_key = "sk_test_23399b578b04e86030b42f8f"
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
