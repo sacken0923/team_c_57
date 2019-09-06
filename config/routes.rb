@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index]
   resources :purchases
   
-  resources :signup do
+  resources :signup ,only: [:index, :create] do
     collection do
       get 'registration1'
       get 'registration2'
@@ -19,9 +19,9 @@ Rails.application.routes.draw do
   resources :homes, only: [:show, :edit]
   resources :cards, only: [:new, :show] do
     collection do
-      post 'show', to: 'cards#show'
-      post 'pay', to: 'cards#pay'
-      post 'delete', to: 'cards#delete'
+      post 'show'
+      post 'pay'
+      post 'delete'
     end
   end
 end
