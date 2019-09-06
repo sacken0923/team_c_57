@@ -215,5 +215,19 @@
   &__bottom{
     height: 70px;
   }
+}
 
+.detail-image-box{
+  position: relative;
+  .detail-sold{
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fff;
+    font-size:28px;
+    border-top: 120px solid #ea352d;
+    border-right: 120px solid transparent;
+    
+    
+  }
 }

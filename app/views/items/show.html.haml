@@ -4,8 +4,10 @@
     .detail__box__title
       = @item.name
     .detail__box__list
-      %div
+      .detail-image-box
         = image_tag "#{@item.photos[0].image}", size: "300", class: "detail-main-image"
+        -if @item.buyer_id?
+          .detail-sold 
         .detail-image-list
           - @item.photos.each do |photo|
             = image_tag "#{photo.image}", size: "60", class: "detail-images"
