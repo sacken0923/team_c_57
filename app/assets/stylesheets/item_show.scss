@@ -26,6 +26,7 @@
     .detail-image-list{
       background-color: #eee;
       display:flex;
+      flex-wrap: wrap;
         .detail-images{
           display: block;
         }
@@ -179,8 +180,10 @@
     &__items{
       margin: 15px 0 15px;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       .detail-item{
+        margin: 15px 0 15px;
         width: 220px;
         background-color: #fff;
         &__description{
