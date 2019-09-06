@@ -63,6 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
   gem 'unicorn', '5.4.1'
+  gem 'listen', '~> 3.0.5'
 end
 
 gem 'payjp'
