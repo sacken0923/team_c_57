@@ -21,7 +21,7 @@
               %br
             = fa_icon "thumbs-up", class: "detail-like"
             %span
-              116
+              = @item.like
         .detail-info__box
           .detail-info__box__left
             カテゴリー
@@ -82,17 +82,7 @@
       .detail-buy__btn
         購入画面に進む
     .detail-text
-      ラルフローレン ポロシャツ  メンズLサイズ
-      %br
-      30年前購入のビンテージ品です。
-      %br
-      日本製 サイズは日本サイズのL〜M相当です。
-      %br
-      保管状態も良いと思います。写真でご判断をお願いします。
-      %br
-      最終価格にてお値引きご勘弁下さい。
-      %br
-      ☆プロフィールご覧下さい
+      = @item.description
     %div
       %button.detail-like-btn
         = fa_icon "heart", class: "detail-like-btn__heart"
@@ -127,81 +117,21 @@
       =fa_icon "instagram", class: "detail-icon detail-instagram"
   .detail__other
     = link_to "#", class: "detail-link detail__other__link" do
-      カカロットさんのその他の商品
+      = "#{@user.nickname}さんのその他の商品"
     .detail__other__items
-      = link_to "#", class: "detail-link" do
-        .detail-item
-          = image_tag "kakarotto.jpg", size: "220"
-          .detail-item__description
-            .detail-item__name
-              カカロット
-            .detail-item__price
-              .detail-item__price__price
-                ￥5,000
-              = fa_icon "heart", class: "detail-icon"
-              .detail-like
-                14
-      = link_to "#", class: "detail-link" do
-        .detail-item
-          = image_tag "kakarotto.jpg", size: "220"
-          .detail-item__description
-            .detail-item__name
-              カカロット
-            .detail-item__price
-              .detail-item__price__price
-                ￥5,000
-              = fa_icon "heart", class: "detail-icon"
-              .detail-like
-                14
-      = link_to "#", class: "detail-link" do
-        .detail-item
-          = image_tag "kakarotto.jpg", size: "220"
-          .detail-item__description
-            .detail-item__name
-              カカロット
-            .detail-item__price
-              .detail-item__price__price
-                ￥5,000
-              = fa_icon "heart", class: "detail-icon"
-              .detail-like
-                14
-    .detail__other__items
-      = link_to "#", class: "detail-link" do
-        .detail-item
-          = image_tag "kakarotto.jpg", size: "220"
-          .detail-item__description
-            .detail-item__name
-              カカロット
-            .detail-item__price
-              .detail-item__price__price
-                ￥5,000
-              = fa_icon "heart", class: "detail-icon"
-              .detail-like
-                14
-      = link_to "#", class: "detail-link" do
-        .detail-item
-          = image_tag "kakarotto.jpg", size: "220"
-          .detail-item__description
-            .detail-item__name
-              カカロット
-            .detail-item__price
-              .detail-item__price__price
-                ￥5,000
-              = fa_icon "heart", class: "detail-icon"
-              .detail-like
-                14
-      = link_to "#", class: "detail-link" do
-        .detail-item
-          = image_tag "kakarotto.jpg", size: "220"
-          .detail-item__description
-            .detail-item__name
-              カカロット
-            .detail-item__price
-              .detail-item__price__price
-                ￥5,000
-              = fa_icon "heart", class: "detail-icon"
-              .detail-like
-                14
+      - @items.each do |item|
+        = link_to item_path(item), class: "detail-link" do
+          .detail-item
+            = image_tag "#{item.photos[0].image}", size: "220"
+            .detail-item__description
+              .detail-item__name
+                = item.name
+              .detail-item__price
+                .detail-item__price__price
+                  = "￥#{item.price}"
+                = fa_icon "heart", class: "detail-icon"
+                .detail-like
+                  = @item.like
     .detail__other
     = link_to "#", class: "detail-link detail__other__link" do
       その他 （おもちゃ・ホビー・グッズ） その他の商品
