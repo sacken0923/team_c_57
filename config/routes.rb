@@ -17,11 +17,11 @@ Rails.application.routes.draw do
     end
   end
   resources :homes, only: [:show, :edit]
-  # resources :cards, only: [:new, :show] do
-  #   collection do
-  #     post 'show'
-  #     post 'pay'
-  #     post 'delete'
-  #   end
-  # end
+  resources :cards, only: [:new, :show] do
+    collection do
+      post 'show'
+      post 'pay'
+      post 'delete'
+    end
+  end
 end
