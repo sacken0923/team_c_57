@@ -12,7 +12,6 @@ Rails.application.routes.draw do
       get 'registration1'
       get 'registration2'
       get 'registration3'
-      get 'registration4'
       get 'complete' 
     end
   end
