@@ -1,10 +1,10 @@
 = render "signup/header"
-.card-infomation
-  .card-infomation__title
+.card-information
+  .card-information__title
     %p クレジットカード情報入力
-  .card-infomation__main
+  .card-information__main
     = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm" )do
-      .card-infomation__main__number
+      .card-information__main__number
         %label.tomo-number カード番号
         %p.hissu 必須
         = text_field_tag "number", "", class: "kito-number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
@@ -23,7 +23,7 @@
             %img{src:"https://www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?273499512" ,width:"49px",height:"20px"}
           %li
             %img{src:"https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?273499512" ,width:"49px",height:"20px"}
-        .card-infomation__main__number__line
+        .card-information__main__number__line
           %label.tomo-number 有効期限
           %p.hissu 必須
         .display
@@ -54,7 +54,7 @@
             %option{value: "2028"}28
             %option{value: "2029"}29
           %span 年
-        .card-infomation__main__back
+        .card-information__main__back
           %label.tomo-number  セキュリティコード
           %p.hissu 必須
           = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"

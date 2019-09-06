@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index]
   resources :purchases
   
-  resources :signup ,only: [:index,:create] do
+  resources :signup  do
     collection do
       get 'registration1'
       get 'registration2'
