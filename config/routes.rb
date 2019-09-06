@@ -7,12 +7,11 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index]
   resources :purchases
   
-  resources :signup ,only: [:index,:create] do
+  resources :signup  do
     collection do
       get 'registration1'
       get 'registration2'
       get 'registration3'
-      get 'registration4'
       get 'complete' 
     end
   end
