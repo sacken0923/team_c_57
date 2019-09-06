@@ -8,13 +8,12 @@ Rails.application.routes.draw do
   resources :purchases
   
   resources :signup ,only: [:index, :create] do
-    # collection do
-    #   get 'registration1'
-    #   get 'registration2'
-    #   get 'registration3'
-    #   get 'registration4'
-    #   get 'complete' 
-    # end
+    collection do
+      get 'registration1'
+      get 'registration2'
+      get 'registration3'
+      get 'complete' 
+    end
   end
   resources :homes, only: [:show, :edit]
   resources :cards, only: [:new, :show] do
