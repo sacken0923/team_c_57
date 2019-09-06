@@ -80,9 +80,13 @@
         (税込)
       %span.detail-price__message
         送料込み
-    = link_to  purchase_path(@item), class: "detail-link" do
-      .detail-buy__btn
-        購入画面に進む
+    - unless @item.buyer_id?
+      = link_to  purchase_path(@item), class: "detail-link" do
+        .detail-buy__btn
+          購入画面に進む
+    - else
+      .detail-sold-out
+        売り切れました
     .detail-text
       = @item.description
     %div
@@ -103,8 +107,12 @@
       .detail-comment-box__message
         相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります
       %textarea.detail-text
-      %button.detail-btn
-        コメントする
+      - unless @item.buyer_id?
+        %button.detail-btn
+          コメントする
+      - else
+        .detail-no-comment
+          売り切れのためコメントできません
   .detail-nav
     = link_to "#", class: "detail-nav__before detail-link" do
       ＜ラルフローレン ポロシャツ
@@ -133,7 +141,9 @@
                   = "￥#{item.price}"
                 = fa_icon "heart", class: "detail-icon"
                 .detail-like
-                  = @item.like
+                  = item.like
+            - if  item.buyer_id?
+              .detail-item-sold
     .detail__other
     = link_to "#", class: "detail-link detail__other__link" do
       その他 （おもちゃ・ホビー・グッズ） その他の商品

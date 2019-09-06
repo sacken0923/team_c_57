@@ -41,6 +41,7 @@
         background-color: #fff;
         width: 213px;
         margin-left:16px;
+        position: relative;
         &:hover{
           border: #0099e8 solid 1px;
         }
@@ -87,4 +88,13 @@
     }
   }
   }
+}
+.top-sold{
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  font-size:28px;
+  border-top: 100px solid #ea352d;
+  border-right: 100px solid transparent;
 }
