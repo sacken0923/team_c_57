@@ -12,15 +12,16 @@ Rails.application.routes.draw do
       get 'registration1'
       get 'registration2'
       get 'registration3'
+      get 'registration4'
       get 'complete' 
     end
   end
   resources :homes, only: [:show, :edit]
   resources :cards, only: [:new, :show] do
     collection do
-      post 'show', to: 'cards#show'
-      post 'pay', to: 'cards#pay'
-      post 'delete', to: 'cards#delete'
+      post 'show'
+      post 'pay'
+      post 'delete'
     end
   end
 end
