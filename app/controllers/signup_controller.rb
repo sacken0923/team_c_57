@@ -1,4 +1,6 @@
 class SignupController < ApplicationController
+  before_action :move_to_root
+  # before_action :step_registration, only: [:registration1,:registration2,:registration3]
   before_action :validates_registration1, only: :registration2
   before_action :validates_registration2, only: :registration3
   before_action :validates_registration3, only: :create
@@ -97,9 +99,9 @@ class SignupController < ApplicationController
   end
 
 
-  def registration4
-    @user = User.new
-  end
+  # def registration4
+  #   @user = User.new
+  # end
   
   def validates_registration3
     @user = User.new(
@@ -205,6 +207,20 @@ class SignupController < ApplicationController
       )
     end
 
+    def move_to_root
+      redirect_to root_path if user_signed_in?
+    end
 
+    # def  step_registration
+
+    #   if 
+
+    #   else
+        
+    #   end
+
+    # end
+
+    
 
 end
