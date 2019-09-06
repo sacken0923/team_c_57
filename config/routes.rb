@@ -7,20 +7,21 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index]
   resources :purchases
   
-  resources :signup ,only: [:create] do
+  resources :signup ,only: [:index, :create] do
     collection do
       get 'registration1'
       get 'registration2'
       get 'registration3'
+      get 'registration4'
       get 'complete' 
     end
   end
   resources :homes, only: [:show, :edit]
-  resources :cards, only: [:new, :show] do
-    collection do
-      post 'show'
-      post 'pay'
-      post 'delete'
-    end
-  end
+  # resources :cards, only: [:new, :show] do
+  #   collection do
+  #     post 'show'
+  #     post 'pay'
+  #     post 'delete'
+  #   end
+  # end
 end
