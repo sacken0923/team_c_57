@@ -3,6 +3,6 @@
 end
 
 
-12.times do |i|
+10.times do |i|
   Photo.create(image: "kakarotto.jpg", item_id: i+1 )
 end
