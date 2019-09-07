@@ -3,6 +3,9 @@
   .mypage__box
     = render 'shared/side_bar'
     .log-out
-      = render "pay"
+      .log-out__box
+        = link_to new_card_path, class: "log-out-link" do
+          .log-out-btn
+            クレジットカード
 = render 'shared/footer' 
 = render 'shared/red_icon'

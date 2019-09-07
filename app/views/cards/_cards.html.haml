@@ -1,4 +1,3 @@
-= render "signup/header"
 .card-information
   .card-information__title
     %p クレジットカード情報入力
@@ -60,4 +59,3 @@
           = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
           #card_token
           = submit_tag "追加する", id: "token_submit",class:"btn-red"
-= render "signup/footer"
