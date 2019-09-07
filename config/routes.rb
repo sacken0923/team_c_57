@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   root to: "homes#index"
 
   resources :items, only: [:new, :create , :edit, :update, :show]
-  resources :users, only: [:show, :index]
+  resources :users, only: [:show, :index] do
+    collection do
+    get "cards"
+    end
+  end
   resources :purchases
   
   resources :signup ,only: [:index, :create] do
