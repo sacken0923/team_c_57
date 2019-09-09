@@ -1,9 +1,17 @@
 class ItemsController < ApplicationController
+
   def new
     @item = Item.new
+    @item.photos.build
   end
 
   def create
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to root_path
+    else
+      render "new"
+    end
   end
 
   def edit
@@ -11,6 +19,7 @@ class ItemsController < ApplicationController
   
   def update
   end
+
 
   def show
     @item = Item.find(params[:id])
@@ -21,5 +30,20 @@ class ItemsController < ApplicationController
   def search
     @items = Item.where('name LIKE ?', "%#{params[:keyword]}%")
   end
+
+  private
+    def item_params
+      params.require(:item).permit(
+        :name,
+        :price,
+        :description,
+        :state,
+        :delivery,
+        :shipping_method,
+        :shipping_time,
+        photos_attributes:[:item_id,:image]
+      ).merge(seller_id: current_user.id)
+    end
+
 
 end
