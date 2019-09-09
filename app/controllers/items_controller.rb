@@ -18,4 +18,8 @@ class ItemsController < ApplicationController
     @items = Item.where(seller_id: @user.id).limit(6).order(id: "DESC").where.not(id: @item.id)
   end
 
+  def search
+    @items = Item.where('name LIKE ?', "%#{params[:keyword]}%")
+  end
+
 end
