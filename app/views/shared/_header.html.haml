@@ -4,8 +4,8 @@
       .header-logo
         = link_to root_path  do
           = image_tag "logo.svg", alt: "mercari", height: "36", width: "134" 
-      %form(action="#" class="header-search")
-        %input(type="text" placeholder="何かお探しですか？" class="header-input")
+      = form_tag(search_items_path, method: 'get', class: "header-search") do
+        = text_field_tag :keyword, params[:keyword], { placeholder: "何かお探しですか？", class: "header-input" }
         %label.header-icon
           %input(type="submit"  class="header-icon__btn")
             = fa_icon 'search', class: 'header-icon__btn__icon'
@@ -43,4 +43,3 @@
                 = image_tag 'member_photo_noimage_thumb.png',class: "header-mypage__box__image",size: "32"
               .header-mypage__box__body
                 マイページ
-                

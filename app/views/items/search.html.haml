@@ -1,0 +1,54 @@
+= render 'shared/header' 
+.search
+  .search__box
+    %form.search__box__left
+      %select.search__box__left__top
+        %option 並び替え
+      .search__box__left__main
+        .search-bold
+          詳細検索
+        = fa_icon "plus", class: "search-icon"
+        %span
+          キーワードを追加する
+        %input{placeholder: "例）値下げ"}
+        = fa_icon "list", class: "search-icon"
+        %span
+          カテゴリーを選択する
+        %select
+        = fa_icon "tag", class: "search-icon"
+        %span
+          ブランド名から探す
+        %input{placeholder: "例）supreme"}
+        = fa_icon "check", class: "search-icon"
+        %span
+          サイズを指定する
+        %select
+        = fa_icon "bitcoin", class: "search-icon"
+        %span
+          価格
+        %select.search-select
+        %input.input-half{placeholder: "¥ Min"}
+        %span ~
+        %input.input-half{placeholder: "¥ max"}
+        
+          
+
+
+    .search__result
+      .search__result__look
+        =params[:keyword]
+        %span.search__result__span
+          の検索結果
+      .search__result__num
+        = "#{@items.length}件表示"
+      .search__result__items
+        - @items.each do |item|
+          = link_to item_path(item), class: "search-item" do
+            = image_tag "#{item.photos[0].image}", size: "160"
+            .search-item__body
+              .search-item__body__name
+                = item.name
+              .search-item__body__price
+                = "¥#{item.price}"
+        
+= render 'shared/footer'
