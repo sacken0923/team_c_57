@@ -10,6 +10,9 @@
             %label.form-list__tomo ニックネーム
             %span.required 必須
             = f.text_field :nickname, placeholder: "例) メルカリ太郎",class:"form-list__form tomo"
+            -# - if @user.errors.any?
+            -#   %h3
+            -#     エラーエラー
           .form-list
             %label.form-list__tomo メールアドレス
             %span.required 必須
@@ -35,8 +38,8 @@
             %label.form-list__tomo お名前カナ(全角)
             %span.required 必須
             .form-list__name
-              = f.text_field :kana_last_name, placeholder: "例) カカ",class:"form-list__form harf"
-              = f.text_field :kana_first_name, placeholder: "例) ロット",class:"form-list__form harf"
+              = f.text_field :kana_last_name, placeholder: "例) カカ", pattern:"[\u30A1-\u30F6]*",class:"form-list__form harf"
+              = f.text_field :kana_first_name, placeholder: "例) ロット",pattern:"[\u30A1-\u30F6]*",class:"form-list__form harf"
           .form-list
             %label.form-list__tomo 生年月日
             %span.required 必須
@@ -70,7 +73,7 @@
               「次へ進む」のボタンを押すことにより、
               %span 利用規約に
             %p.tomo-text-center  同意したものとみなします
-            = f.button  "次へ進む", class:"btn-red"   
+            = f.button  "次へ進む", class:"btn-red"  
           .form-last
             .form-last__link 
               本人情報の登録について

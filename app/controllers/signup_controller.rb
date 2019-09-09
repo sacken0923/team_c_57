@@ -42,7 +42,7 @@ class SignupController < ApplicationController
       year: session[:year],
       month: session[:month],
       day: session[:day],
-      tell: "aa",
+      tell: 12312341234 ,
       address_last_name: "aa",
       address_first_name: "aa",
       kana_address_last_name: "aa",
@@ -54,7 +54,7 @@ class SignupController < ApplicationController
       building: "aa",
       home_tel: "aa"
     )
-    if @user.valid?(:validates_step1)
+    if @user.valid?
       registration2_signup_index_path
     else
       render "signup/registration1" 
@@ -91,7 +91,7 @@ class SignupController < ApplicationController
       building: "aa",
       home_tel: "aa"
     )
-    if @user.valid?(:validates_registration2)
+    if @user.valid?
       registration3_signup_index_path
     else
       render "signup/registration2" 
@@ -128,7 +128,7 @@ class SignupController < ApplicationController
       building: user_params[:building],
       home_tel: user_params[:home_tel]
     )
-    if @user.valid?(:validates_registration3)
+    if @user.valid? 
       complete_signup_index_path
     else
       render "signup/registration3" 
@@ -163,7 +163,7 @@ class SignupController < ApplicationController
     )
     if @user.save
       session[:id] = @user.id
-      redirect_to complete_signup_index_path
+      redirect_to  complete_signup_index_path
     else
       redirect_to registration1_signup_index_path
     end
