@@ -8,7 +8,7 @@
       .info__box
         .info__box__title
           本人情報の登録
-        = form_for '#', html: {class: "info__form"} do |f|
+        = form_for "#",method: :get, html: {class: "info__form"} do |f|
           .info-message
             お客さまの本人情報をご登録ください。
             %br
