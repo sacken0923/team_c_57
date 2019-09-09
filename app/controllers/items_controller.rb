@@ -20,8 +20,6 @@ class ItemsController < ApplicationController
   def update
   end
 
-  def destory
-  end
 
   def show
     @item = Item.find(params[:id])
