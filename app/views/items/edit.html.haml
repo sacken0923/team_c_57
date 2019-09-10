@@ -1,1 +1,113 @@
+= render "signup/header-logo"
+.edit-item
+  = form_for @item, url:items_path, method: :patch do |f| 
+    .edit-item__box
+      .edit-item__box__title
+        商品の情報を入力
+      .edit-item__box__images
+        %h3
+          出品画像
+          %span
+            必須
+          %p
+            最大10枚までアップロードできます
+        .images-box
+          ドラッグアンドドロップ
+          %br
+          またはクリックしてファイルをアップロード
+        .edit-item-images-under
+      .content
+        .content__name
+          商品名 
+          %span
+            必須
+        = f.text_field :name, class: "item-name"
+        %h3
+          商品の説明
+          %span
+            必須
+        = f.text_area :description, class: "item-description"
+      .edit-item-images-under
+      .explain-box
+        .explain-box__left
+          商品の詳細
+        .explain-box__right
+          %p
+            カテゴリー
+            %span
+              必須
+          %select
+            %option ---
+            %option{:value => "レディース"} レディース
+            %option{:value => "メンズ"} メンズ
+          %p.explain-box__right__state
+            商品の状態
+            %span
+              必須
+          = f.select :state  do
+            %option ---
+            %option{:value => "新品"} 新品、未使用品
+            %option{:value => "未使用"} 未使用品に近い
+      .explain-box
+        .explain-box__left
+          配送について
+        .explain-box__right
+          %p
+            配送料の負担
+            %span
+              必須
+          = f.select :delivery  do
+            %option ---
+            %option{:value => "送料込み"} 送料込み(出品者負担)
+            %option{:value => "着払い"} 着払い(購入者負担)
+          %p.explain-box__right__state
+            配送の方法
+            %span
+              必須
+          = f.select :shipping_method ,class:"select-default"  do
+            %option ---
+          %p.explain-box__right__state
+            発送元の地域
+            %span
+              必須
+          %select
+            %option ---
+            %option{:value => "北海道"} 北海道
+            %option{:value => "青森"} 青森
+          %p.explain-box__right__state
+            発送までの日数
+            %span
+              必須
+          = f.select :shipping_time  do
+            %option ---
+            %option{:value => "１〜２日"} 1〜2日で発送
+            %option{:value => "2〜3日で発送"} 2〜3日で発送
+      .explain-box
+        .explain-box__left
+          販売価格(300〜9,999,999
+        .price-box
+          .price-box__top
+            %p
+              価格
+              %span
+                必須
+            = f.text_field :price, placeholder: "例）300",class: "price-input"
+          .price-box__mid
+            %p 
+              販売手数料 (10%)
+            %p
+              = "¥#{@item.price / 10}"
+          .price-box__bottom
+            %p 
+              販売利益
+            .profit
+              = "¥#{(@item.price * 0.9).to_i}"
+      .btn
+        = f.submit "変更する", class: "change-submit"
+        = link_to "#",class: "link" do
+          .cancel-btn
+            キャンセル
 
+
+
+= render "signup/footer"
