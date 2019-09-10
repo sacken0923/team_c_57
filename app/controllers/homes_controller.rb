@@ -10,4 +10,9 @@ class HomesController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
+
+  def listing
+    @items = Item.where(seller_id: current_user.id)
+
+  end
 end

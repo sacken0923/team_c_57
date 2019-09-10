@@ -33,7 +33,11 @@ Rails.application.routes.draw do
       get 'complete' 
     end
   end
-  resources :homes, only: [:show, :edit]
+  resources :homes, only: [:show, :edit] do
+    collection do
+      get 'listing'
+    end
+  end
   resources :cards, only: [:new, :show] do
     collection do
       post 'show'
