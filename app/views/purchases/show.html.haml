@@ -6,12 +6,13 @@
         購入内容の確認
       .buy-item-box
         .buy-item-box__bodys
-          = image_tag "kakarotto.jpg", size: "64"
+          = image_tag @item.photos[0].image.url, height: "64px"
           .buy-item-box__bodys__name
-            新品 4L XXXLくまモン 大きいサイズ Tシャツ ホワイト
+            = @item.name
         .buy-item-box__price
           .buy-item-box__price__left
-            ¥ 1,280
+            ¥
+            = @item.price
           .buy-item-box__price__right
             送料込み
         .buy-item-box__point
@@ -20,7 +21,8 @@
           .buy-item-box__total__left
             支払い金額
           .buy-item-box__total__right
-            ¥ 1,280
+            ¥
+            = @item.price
         .buy-item-box__purchase
           = f.submit "購入する", class: "submit"
   .buy-item-container__case
@@ -28,11 +30,11 @@
       .buy-item-container__case__box__top
         配送先
       .buy-item-container__case__box__name
-        〒 郵便番号
+        =  "〒 #{current_user.postal_code}"
         %br
-        住所
+        = current_user.prefecture
         %br
-        山田
+        = "#{current_user.last_name} #{current_user.first_name}"
       .buy-item-container__case__box__edit
         =link_to "", class:"ships" do
           %span 変更する
@@ -42,15 +44,13 @@
       .buy-item-container__pay__box__top
         支払い方法
       .buy-item-container__pay__box__name
-        〒 郵便番号
+        = "**** **** **** " + @default_card_information.last4
         %br
-        住所
-        %br
-        山田
+        - exp_month = @default_card_information.exp_month.to_s
+        - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+        = exp_month + " / " + exp_year
       .buy-item-container__case__pay__edit
         =link_to "", class:"ships" do
           %span 変更する
           = fa_icon "chevron-right", class: "ships"
 = render "signup/footer"
-
-
