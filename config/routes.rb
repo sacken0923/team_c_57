@@ -16,7 +16,13 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:show, :index]
-  resources :purchases
+
+  resources :purchases, only: [:show] do
+    collection do
+      post "pay", to: "purchase#pay"
+      get "done", to: "purchase#done"
+    end
+  end
   
   resources :signup ,only: [:index, :create] do
     collection do

@@ -1,5 +1,9 @@
 class Item < ApplicationRecord
-  has_many :photos
+  
+  has_many :photos , dependent: :destroy
+
+  belongs_to :category
+
   accepts_nested_attributes_for :photos
 
   enum state: {"---": 0,"新品、未使用": 1, "未使用に近い": 2, "目立った傷や汚れなし": 3, "傷や汚れあり": 4, "全体的に状態が悪い": 5}, _suffix: true

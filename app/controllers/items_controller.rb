@@ -42,7 +42,7 @@ class ItemsController < ApplicationController
         :delivery,
         :shipping_method,
         :shipping_time,
-        photos_attributes:[:item_id,:image]
+        photos_attributes:[:item_id, :image ]
       ).merge(seller_id: current_user.id)
     end
 

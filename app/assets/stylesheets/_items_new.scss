@@ -125,7 +125,7 @@ select{
           padding: 40px;
           background-color: #FFFFFF;
           width: 470px;
-          flex-direction:　column;
+          flex-direction: column;
           &__a{
             font-size: 14px;
             font-weight: bold;
@@ -155,7 +155,7 @@ select{
           padding: 40px;
           background-color: #FFFFFF;
           width: 470px;
-          flex-direction:　column;
+          flex-direction:column;
           &__a{
             font-size: 14px;
             font-weight: bold;
@@ -191,7 +191,7 @@ select{
           width: 400px;
           height: 218px;
           background-color: #FFFFFF;
-          flex-direction:　column;
+          flex-direction:column;
           &__up{
             width: 400px;
             height: 48px;
@@ -285,20 +285,27 @@ select{
     }
   }
 }
+.fiele_field{
+  display: flex;
+
+}
 .image_up{
   height: 162px;
-  width: 620px;
+  width: 124px;
   background-color: #F5F5F5;
   text-align: center;
   margin-top: 16px;
-  justify-content: center;
-  align-items: center;
   border: dashed 1px #ccc;
-    &__text{
-      margin-top:60px;
-        p{
-          font-size:13px;
-          color: black;
-        }
+    img{
+      height: 164px;
+      width: 126px;
+    }
+    button{
+      background-color:red;
+      margin-top:10px;
+      width:40px;
+      color: white;
+      border-radius: 4px;
+      font-weight: bold;
     }
 }
