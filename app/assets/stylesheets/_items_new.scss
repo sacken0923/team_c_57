@@ -14,6 +14,8 @@ select{
   width: 400px;
   height: 48px;
   margin-top: 8px;
+  background-color:white;
+  border: 1px solid #ccc;
 }
 
 .question{
@@ -92,6 +94,7 @@ select{
             width: 590px;
             height: 28px;
             font-weight: normal;
+            border: 1px solid #ccc;
           }
         }
         &__b{
@@ -104,6 +107,7 @@ select{
             height: 120px;
             width: 600px;
             font-weight: normal;
+            border: 1px solid #ccc;
           }
         }
       }
@@ -142,7 +146,6 @@ select{
         display: flex;
         justify-content: flex-start;
         border-top: 1px solid #EEEEEE;
-        height:371px;
         background-color: white;
         &__left{
           padding: 40px;
@@ -221,6 +224,7 @@ select{
                 height: 28px;
                 border-radius: 4px;
                 margin-left: 10px;
+                border: 1px solid #ccc;
               }
             }
           }
@@ -308,4 +312,9 @@ select{
       border-radius: 4px;
       font-weight: bold;
     }
+}
+
+#form-method{
+  margin-top: 30px;
+  display:none;
 }
