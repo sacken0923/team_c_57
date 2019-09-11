@@ -59,57 +59,84 @@
         .product-container__main__detail__left
           商品の詳細
         .product-container__main__detail__right
-          .product-container__main__detail__right__a
-            %label
-              カテゴリー
-            %span.form-require 
-              必須
-          %select.select-default
-            %option ---
-            %option{:value => "レディース"} レディース
-            %option{:value => "メンズ"} メンズ
-          .product-container__main__detail__right__b
-            %label
-              商品の状態
-            %span.form-require 
-              必須
-          = f.select :state ,class:"select-default"  do
-            %option ---
-            %option{:value => "新品"} 新品、未使用品
-            %option{:value => "未使用"} 未使用品に近い
+          .form-list
+            .product-container__main__detail__right__a
+              %label
+                カテゴリー
+              %span.form-require 
+                必須
+            %select.select-default#select_parent
+              %option ---
+              %option{:value => "1"} レディース
+              %option{:value => "2"} メンズ
+              %option{:value => "3"} ベビー・キッズ
+              %option{:value => "4"} インテリア・住まい・小物
+              %option{:value => "5"} 本・音楽・ゲーム
+              %option{:value => "6"} おもちゃ・ホビー・グッズ
+              %option{:value => "7"} コスメ・香水・美容
+              %option{:value => "8"} 家電・スマホ・カメラ
+              %option{:value => "9"} スポーツ・レジャー
+              %option{:value => "10"} ハンドメイド
+              %option{:value => "11"} チケット
+              %option{:value => "12"} 自動車・オートバイ
+              %option{:value => "13"} その他
+            #select_parent
+          .form-list
+            .product-container__main__detail__right__b
+              %label
+                商品の状態
+              %span.form-require 
+                必須
+            = f.select :state ,class:"select-default"  do
+              %option ---
+              %option{:value => "新品"} 新品、未使用品
+              %option{:value => "未使用"} 未使用品に近い
       .product-container__main__delivery
         .product-container__main__delivery__left
           配送について
           = link_to " ", class: "question" do
             ?
         .product-container__main__delivery__right
-          .product-container__main__delivery__right__a
-            %label
-              配送料の負担
-            %span.form-require 
-              必須
-          = f.select :delivery ,class:"select-default"  do
-            %option ---
-            %option{:value => "送料込み"} 送料込み(出品者負担)
-            %option{:value => "着払い"} 着払い(購入者負担)
-          .product-container__main__delivery__right__b
-            %label
-              発送元の地域
-            %span.form-require 
-              必須
-          = f.select :shipping_method ,class:"select-default"  do
-            %option ---
-            %option{:value => "北海道"} 北海道
-            %option{:value => "青森"} 青森
-          .product-container__main__delivery__right__c
-            %label
-              発送までの日数
-            %span.form-require 
-              必須
-          = f.select :shipping_time ,class:"select-default"  do
-            %option ---
-            %option{:value => "１〜２日"} 1〜2日で発送
-            %option{:value => "2〜3日で発送"} 2〜3日で発送
+          .form-list
+            .product-container__main__delivery__right__a
+              %label
+                配送料の負担
+              %span.form-require 
+                必須
+            = f.select :delivery ,class:"select-default"  do
+              %option ---
+              %option{:value => "送料込み"} 送料込み(出品者負担)
+              %option{:value => "着払い"} 着払い(購入者負担)
+          .form-list#form-method
+            .product-container__main__delivery__right__a
+              %label
+                配送の方法
+              %span.form-require 
+                必須
+            = f.select :shipping_method ,class:"select-default"  do
+              %option ---
+              %option{:value => "送料込み"} 送料込み(出品者負担)
+              %option{:value => "着払い"} 着払い(購入者負担)
+          .form-list
+            .product-container__main__delivery__right__b
+              %label
+                発送元の地域
+              %span.form-require 
+                必須
+            = f.select :shipping_method ,class:"select-default"  do
+              %option ---
+              %option{:value => "北海道"} 北海道
+              %option{:value => "青森"} 青森
+          .form-list
+            .product-container__main__delivery__right__c
+              %label
+                発送までの日数
+              %span.form-require 
+                必須
+            = f.select :shipping_time ,class:"select-default"  do
+              %option ---
+              %option{:value => "１〜２日"} 1〜2日で発送
+              %option{:value => "2〜3日で発送"} 2〜3日で発送
       .product-container__main__price
         .product-container__main__price__left
           販売価格(300〜9,999,999)
