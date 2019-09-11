@@ -21,9 +21,11 @@ class PurchasesController < ApplicationController
     :customer => card.customer_id,
     :currency => "jpy", 
   )
-  redirect_to action: "done"
   end
 
   def done
+    @item = Item.find(params[:id])
   end
+
+
 end
