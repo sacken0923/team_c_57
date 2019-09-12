@@ -51,28 +51,28 @@
           .detail-info__box__left
             商品の状態
           .detail-info__box__right
-            傷や汚れあり
+            = @item.state
         .detail-info__box
           .detail-info__box__left
             配送料の負担
           .detail-info__box__right
-            送料込み(出品者負担)
+            = @item.delivery
         .detail-info__box
           .detail-info__box__left
             配送の方法
           .detail-info__box__right
-            ゆうゆうメルカリ便
+            = @item.shipping_method
         .detail-info__box
           .detail-info__box__left
             配送元地域
           .detail-info__box__right
             = link_to "#", class: "detail-link detail-info__box__right__link" do
-              = @user.prefecture
+              = Prefecture.find(@item.region).name
         .detail-info__box
           .detail-info__box__left
             発送日の目安
           .detail-info__box__right
-            2~3日で発送
+            = @item.shipping_time
     .detail-price
       %span.detail-price__price
         = "¥#{@item.price}"
