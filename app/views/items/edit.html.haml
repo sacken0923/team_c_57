@@ -1,6 +1,6 @@
 = render "signup/header-logo"
 .edit-item
-  = form_for @item, url:items_path, method: :patch do |f| 
+  = form_for @item do |f| 
     .edit-item__box
       .edit-item__box__title
         商品の情報を入力
@@ -36,18 +36,13 @@
             カテゴリー
             %span
               必須
-          %select
-            %option ---
-            %option{:value => "レディース"} レディース
-            %option{:value => "メンズ"} メンズ
+          = f.select :category_id, options_for_select(@parents.map{|p|[p.name, p.id]},selected: @item.category_id)
           %p.explain-box__right__state
             商品の状態
             %span
               必須
-          = f.select :state  do
-            %option ---
-            %option{:value => "新品"} 新品、未使用品
-            %option{:value => "未使用"} 未使用品に近い
+          = f.select :state, options_for_select(Item.states, selected: @item.state_before_type_cast)
+            
       .explain-box
         .explain-box__left
           配送について
@@ -56,32 +51,26 @@
             配送料の負担
             %span
               必須
-          = f.select :delivery  do
-            %option ---
-            %option{:value => "送料込み"} 送料込み(出品者負担)
-            %option{:value => "着払い"} 着払い(購入者負担)
+          = f.select :delivery, options_for_select(Item.deliveries, selected: @item.delivery_before_type_cast)
+            
           %p.explain-box__right__state
             配送の方法
             %span
               必須
-          = f.select :shipping_method ,class:"select-default"  do
-            %option ---
+          = f.select :shipping_method ,options_for_select(Item.shipping_methods, selected: @item.shipping_method_before_type_cast)
+            
           %p.explain-box__right__state
             発送元の地域
             %span
               必須
-          %select
-            %option ---
-            %option{:value => "北海道"} 北海道
-            %option{:value => "青森"} 青森
+          = f.collection_select :region, Prefecture.all, :id, :name, prompt: "--",selected: @item.region
+            
           %p.explain-box__right__state
             発送までの日数
             %span
               必須
-          = f.select :shipping_time  do
-            %option ---
-            %option{:value => "１〜２日"} 1〜2日で発送
-            %option{:value => "2〜3日で発送"} 2〜3日で発送
+          = f.select :shipping_time, options_for_select(Item.shipping_times, selected: @item.shipping_time_before_type_cast)
+            
       .explain-box
         .explain-box__left
           販売価格(300〜9,999,999
@@ -104,9 +93,9 @@
               = "¥#{(@item.price * 0.9).to_i}"
       .btn
         = f.submit "変更する", class: "change-submit"
-        = link_to "#",class: "link" do
+        = link_to "/items/#{@item.id}", method: :delete,class: "link" do
           .cancel-btn
-            キャンセル
+            出品をやめる
 
 
 
