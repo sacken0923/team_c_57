@@ -1,7 +1,7 @@
 = render "signup/header-logo"
 .buy-item-container
   .buy-item-container__main
-    = form_for @item　do |f|
+    = form_for @item do |f|
       %h2.buy-item-container__main__head
         購入内容の確認
       .buy-item-box
@@ -15,17 +15,8 @@
             = @item.price
           .buy-item-box__price__right
             送料込み
-        .buy-item-box__point
-          ポイントはありません
-        .buy-item-box__total
-          .buy-item-box__total__left
-            支払い金額
-          .buy-item-box__total__right
-            ¥
-            = @item.price
-        .buy-item-box__purchase
-          = f.submit "購入する", class: "submit"
-  .buy-item-container__case
-    .buy-item-container__case__box
-      おおきに！
+        .buy-item-box__arigato
+          ARIGATO!!
+        .buy-item-box__sayonara
+          = link_to "Topページへ戻る", root_path, class: "back-top"
 = render "signup/footer"

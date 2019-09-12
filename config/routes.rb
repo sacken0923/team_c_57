@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   resources :purchases, only: [:show] do
     collection do
       post "pay"
+    end
+    member do
       patch "done"
     end
   end
