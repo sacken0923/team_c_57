@@ -41,7 +41,7 @@
             商品の状態
             %span
               必須
-          = f.select :state, options_for_select(Item.states, selected: @item.state_before_type_cast)
+          = f.collection_select :state, State.all, :id, :name, prompt: "--"
             
       .explain-box
         .explain-box__left
@@ -51,13 +51,13 @@
             配送料の負担
             %span
               必須
-          = f.select :delivery, options_for_select(Item.deliveries, selected: @item.delivery_before_type_cast)
+          = f.collection_select :delivery, Delivery.all, :id, :name, prompt: "--"
             
           %p.explain-box__right__state
             配送の方法
             %span
               必須
-          = f.select :shipping_method ,options_for_select(Item.shipping_methods, selected: @item.shipping_method_before_type_cast)
+          = f.collection_select :shipping_method ,Shipping_method.all,:id, :name,prompt: "--", selected: @item.shipping_method_before_type_cast
             
           %p.explain-box__right__state
             発送元の地域
@@ -69,7 +69,7 @@
             発送までの日数
             %span
               必須
-          = f.select :shipping_time, options_for_select(Item.shipping_times, selected: @item.shipping_time_before_type_cast)
+          = f.collection_select :shipping_time, Shipping_time.all, :id, :name, prompt: "--"
             
       .explain-box
         .explain-box__left
