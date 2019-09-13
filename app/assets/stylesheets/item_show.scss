@@ -247,8 +247,15 @@
     border-top: 120px solid #ea352d;
     border-right: 120px solid transparent;
     
-    
   }
+      .sold{
+        position: absolute;
+        top: 30px;
+        left: 0;
+        color: #fff;
+        font-size: 28px;
+        transform: rotate(-45deg);
+      }
 }
 .detail-sold-out{
   margin-top: 16px;

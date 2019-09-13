@@ -98,3 +98,11 @@
   border-top: 100px solid #ea352d;
   border-right: 100px solid transparent;
 }
+.top-sold-text{
+  position: absolute;
+  top:20px;
+  left: 0;
+  transform: rotate(-45deg);
+  color: #fff;
+  font-size: 22px;
+}

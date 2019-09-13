@@ -8,6 +8,8 @@
         = image_tag "#{@item.photos[0].image}", size: "300", class: "detail-main-image"
         -if @item.buyer_id?
           .detail-sold 
+          .sold
+            SOLD
         .detail-image-list
           - @item.photos.each do |photo|
             = image_tag "#{photo.image}", size: "60", class: "detail-images"
@@ -29,39 +31,33 @@
             カテゴリー
           .detail-info__box__right
             = link_to "#", class: "detail-link" do
-              メンズ
-              %br
-            = link_to "#", class: "detail-link" do
-              ＞トップス
-              %br
-            = link_to "#", class: "detail-link" do
-              ＞ポロシャツ
+              = @item.category.name
         .detail-info__box
           .detail-info__box__left
             ブランド
           .detail-info__box__right
             = link_to "#", class: "detail-link detail-info__box__right__link" do
-              supreme
+              不明
         .detail-info__box
           .detail-info__box__left
             商品のサイズ
           .detail-info__box__right
-            L
+            不明
         .detail-info__box
           .detail-info__box__left
             商品の状態
           .detail-info__box__right
-            = @item.state
+            = State.find(@item.state).name
         .detail-info__box
           .detail-info__box__left
             配送料の負担
           .detail-info__box__right
-            = @item.delivery
+            = Delivery.find(@item.delivery).name
         .detail-info__box
           .detail-info__box__left
             配送の方法
           .detail-info__box__right
-            = @item.shipping_method
+            = Shipping_method.find(@item.shipping_method).name
         .detail-info__box
           .detail-info__box__left
             配送元地域
@@ -72,7 +68,7 @@
           .detail-info__box__left
             発送日の目安
           .detail-info__box__right
-            = @item.shipping_time
+            = Shipping_time.find(@item.shipping_time).name
     .detail-price
       %span.detail-price__price
         = "¥#{@item.price}"
@@ -80,13 +76,20 @@
         (税込)
       %span.detail-price__message
         送料込み
-    - unless @item.buyer_id?
+    -if current_user.id == @item.seller_id && @item.buyer_id?
+      .detail-sold-out
+        取引終了の為編集できません
+    -elsif current_user.id == @item.seller_id
+      = link_to  edit_item_path(@item), class: "detail-link" do
+        .detail-buy__btn
+          商品を編集する
+    - elsif @item.buyer_id?
+      .detail-sold-out
+        売り切れました
+    - else @item.buyer_id? 
       = link_to  purchase_path(@item), class: "detail-link" do
         .detail-buy__btn
           購入画面に進む
-    - else
-      .detail-sold-out
-        売り切れました
     .detail-text
       = @item.description
     %div

@@ -12,9 +12,8 @@
           %p
             最大10枚までアップロードできます
         .images-box
-          ドラッグアンドドロップ
-          %br
-          またはクリックしてファイルをアップロード
+          - @item.photos.each do |photo|
+            = image_tag "#{photo.image}",class: "image"
         .edit-item-images-under
       .content
         .content__name
@@ -90,7 +89,7 @@
             %p 
               販売利益
             .profit
-              = "¥#{(@item.price * 0.9).to_i}"
+              = "¥#{(@item.price - @item.price / 10).to_i}"
       .btn
         = f.submit "変更する", class: "change-submit"
         = link_to "/items/#{@item.id}", method: :delete,class: "link" do

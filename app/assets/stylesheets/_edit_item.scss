@@ -40,9 +40,12 @@
         border-style: dashed;
         border-color: rgb(204, 204, 204);
         text-align: center;
-        padding-top: 70px;
         box-sizing: border-box;
-        
+        display: flex;
+        .image{
+          width: 120px;
+          height: 160px;
+        }
       }
     }
     .content{

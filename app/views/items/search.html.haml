@@ -44,11 +44,15 @@
       .search__result__items
         - @items.each do |item|
           = link_to item_path(item), class: "search-item" do
-            = image_tag "#{item.photos[0].image}", size: "160"
+            = image_tag "#{item.photos[0].image}", size: "160",class: "search-image"
+            - if item.buyer_id?
+              .search-sold
+              .sold
+                SOLD
             .search-item__body
               .search-item__body__name
                 = item.name
               .search-item__body__price
                 = "¥#{item.price}"
-        
+
 = render 'shared/footer'
