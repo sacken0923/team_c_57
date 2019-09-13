@@ -69,10 +69,7 @@
                 商品の状態
               %span.form-require 
                 必須
-            = f.select :state ,class:"select-default"  do
-              %option ---
-              %option{:value => "新品"} 新品、未使用品
-              %option{:value => "未使用"} 未使用品に近い
+            = f.collection_select :state, State.all, :id, :name, prompt: "---"
       .product-container__main__delivery
         .product-container__main__delivery__left
           配送について
@@ -85,28 +82,14 @@
                 配送料の負担
               %span.form-require 
                 必須
-            = f.select :delivery ,class:"select-default"  do
-              %option{value:"---"} ---
-              %option{:value => "1"} 送料込み(出品者負担)
-              %option{:value => "2"} 着払い(購入者負担)
+            = f.collection_select :delivery, Delivery.all, :id, :name, prompt: "---"
           .form-list.method#shipping_method
             .product-container__main__delivery__right__a
               %label
                 配送の方法
               %span.form-require 
                 必須
-            = f.select :shipping_method ,class:"select-default"  do
-              %option{value:"---"} ---
-              %option{:value => "1"} 未定
-              %option{:value => "2"} らくらくメルカリ便
-              %option{:value => "3"} ゆうメール
-              %option{:value => "4"} レーターパック
-              %option{:value => "5"} 未定
-              %option{:value => "6"} 普通郵便(定型、定型外)
-              %option{:value => "7"} クロネコヤマト
-              %option{:value => "8"} ユウパック
-              %option{:value => "9"} クリックポスト
-              %option{:value => "10"} ゆうパケット
+            = f.collection_select :shipping_method ,Shipping_method.all,:id, :name,prompt: "---", selected: @item.shipping_method_before_type_cast
           .form-list
             .product-container__main__delivery__right__b
               %label
@@ -120,10 +103,7 @@
                 発送までの日数
               %span.form-require 
                 必須
-            = f.select :shipping_time ,class:"select-default"  do
-              %option ---
-              %option{:value => "１〜２日"} 1〜2日で発送
-              %option{:value => "2〜3日で発送"} 2〜3日で発送
+            = f.collection_select :shipping_time, Shipping_time.all, :id, :name, prompt: "---"
       .product-container__main__price
         .product-container__main__price__left
           販売価格(300〜9,999,999)
