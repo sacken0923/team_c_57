@@ -121,3 +121,21 @@
     }
   }
 }
+.search-item{
+  position: relative;
+  .search-sold{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 100px solid #ea352d;
+    border-right: 100px solid transparent;
+  }
+  .sold{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    font-size: 20px;
+    color: #fff;
+    transform: rotate(-45deg);
+  }
+}

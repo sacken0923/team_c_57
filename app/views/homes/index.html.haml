@@ -9,7 +9,7 @@
         = link_to "#", class: 'top-link top-genre' do
           レディース 新着アイテム
       .top-items
-        - @items.each do |item|
+        - @ladys.each do |item|
           .top-items__box
             = link_to item_path(item), class: 'top-link ' do
               =image_tag "#{item.photos[0].image}", class: "top-image" 
@@ -25,6 +25,8 @@
                       = item.like
             - if item.buyer_id?
               .top-sold
+              .top-sold-text
+                SOLD
       .top-look
         = link_to "#", class: 'top-link top-look__all' do
           すべての商品を見る
@@ -33,7 +35,7 @@
         = link_to "#", class: 'top-link top-genre' do
           メンズ新着アイテム
       .top-items
-        - @items.each do |item|
+        - @mens.each do |item|
           .top-items__box
             = link_to item_path(item), class: 'top-link ' do
               =image_tag "#{item.photos[0].image}", class: "top-image" 
@@ -49,6 +51,8 @@
                       = item.like
             - if item.buyer_id?
               .top-sold
+              .top-sold-text
+                SOLD
       .top-look
         = link_to "#", class: 'top-link top-look__all' do
           すべての商品を見る
@@ -57,7 +61,7 @@
         = link_to "#", class: 'top-link top-genre' do
           ベビー・キッズ 新着アイテム
       .top-items
-        - @items.each do |item|
+        - @kids.each do |item|
           .top-items__box
             = link_to item_path(item), class: 'top-link ' do
               =image_tag "#{item.photos[0].image}", class: "top-image" 
@@ -73,6 +77,8 @@
                       = item.like
             - if item.buyer_id?
               .top-sold
+              .top-sold-text
+                SOLD
       .top-look
         = link_to "#", class: 'top-link top-look__all' do
           すべての商品を見る
@@ -81,7 +87,7 @@
         = link_to "#", class: 'top-link top-genre' do
           コスメ・香水・美容 新着アイテム
       .top-items
-        - @items.each do |item|
+        - @kosemes.each do |item|
           .top-items__box
             = link_to item_path(item), class: 'top-link ' do
               =image_tag "#{item.photos[0].image}", class: "top-image" 
@@ -97,6 +103,8 @@
                       = item.like
             - if item.buyer_id?
               .top-sold
+              .top-sold-text
+                SOLD
       .top-look
         = link_to "#", class: 'top-link top-look__all' do
           すべての商品を見る
@@ -124,6 +132,8 @@
                       = item.like
             - if item.buyer_id?
               .top-sold
+              .top-sold-text
+                SOLD
       .top-look
         = link_to "#", class: 'top-link top-look__all' do
           すべての商品を見る
@@ -148,6 +158,8 @@
                       = item.like
             - if item.buyer_id?
               .top-sold
+              .top-sold-text
+                SOLD
       .top-look
         = link_to "#", class: 'top-link top-look__all' do
           すべての商品を見る
@@ -172,6 +184,8 @@
                       = item.like
             - if item.buyer_id?
               .top-sold
+              .top-sold-text
+                SOLD
       .top-look
         = link_to "#", class: 'top-link top-look__all' do
           すべての商品を見る
@@ -196,6 +210,8 @@
                       = item.like
             - if item.buyer_id?
               .top-sold
+              .top-sold-text
+                SOLD
       .top-look
         = link_to "#", class: 'top-link top-look__all' do
           すべての商品を見る

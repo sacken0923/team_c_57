@@ -17,14 +17,15 @@
             売却済
         .listing__box__items
           - @items.each do |item|
-            = link_to edit_item_path(item),class: "listing-link" do
-              .item
-                = image_tag "#{item.photos[0].image}", size: "48"
-                .item__body
-                  .item__body__name
-                    = item.name
-                  .item__body__under
-                    出品中
+            - unless item.buyer_id?
+              = link_to edit_item_path(item),class: "listing-link" do
+                .item
+                  = image_tag "#{item.photos[0].image}", size: "48"
+                  .item__body
+                    .item__body__name
+                      = item.name
+                    .item__body__under
+                      出品中
 = render 'shared/footer' 
 = render 'shared/red_icon'
 
