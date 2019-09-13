@@ -3,6 +3,15 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.photos.build
+    @category = Category.where(ancestry: nil)
+  end
+
+  def children
+    @children = Category.find(params[:productcategory]).children
+  end
+
+  def grandchildren
+    @grandchildren = Category.find(params[:productcategory]).children
   end
 
   def create
@@ -42,8 +51,10 @@ class ItemsController < ApplicationController
         :delivery,
         :shipping_method,
         :shipping_time,
+        :category_id,
+        :region,
         photos_attributes:[:item_id, :image ]
-      ).merge(seller_id: current_user.id)
+      ).merge(seller_id: current_user.id) 
     end
 
 

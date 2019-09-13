@@ -29,7 +29,7 @@
             %label 都道府県
             %span.required 必須
           .address-tomo
-            = f.text_field :prefecture, placeholder: "例) 愛知県",class:"address-form"
+            = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "--"
         .form-list
           .form-kito
             %label 市町村
