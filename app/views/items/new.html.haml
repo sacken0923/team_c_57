@@ -17,25 +17,21 @@
               .image_up
                 = photo.file_field :image, type:"file",multiple: true,name:"item[photos_attributes][0][image]",class:" product-container__main__image__box ",id:"file_0"
                 #image_0
-          = f.fields_for  :photos do |photo|
             %label
               .image_up
                 .image_up__text
                 = photo.file_field :image, type:"file",name:"item[photos_attributes][1][image]" ,class:"product-container__main__image__box ",id:"file_1"
                 #image_1
-          = f.fields_for  :photos do |photo|
             %label
               .image_up
                 .image_up__text
                 = photo.file_field :image, type:"file",name:"item[photos_attributes][2][image]",class:" product-container__main__image__box ",id:"file_2"
                 #image_2
-          = f.fields_for  :photos do |photo|
             %label
               .image_up
                 .image_up__text
                 = photo.file_field :image, type:"file",name:"item[photos_attributes][3][image]",class:" product-container__main__image__box ",id:"file_3"
                 #image_3
-          = f.fields_for  :photos do |photo|
             %label
               .image_up
                 .image_up__text
@@ -65,22 +61,8 @@
                 カテゴリー
               %span.form-require 
                 必須
-            %select.select-default#select_parent
-              %option ---
-              %option{:value => "1"} レディース
-              %option{:value => "2"} メンズ
-              %option{:value => "3"} ベビー・キッズ
-              %option{:value => "4"} インテリア・住まい・小物
-              %option{:value => "5"} 本・音楽・ゲーム
-              %option{:value => "6"} おもちゃ・ホビー・グッズ
-              %option{:value => "7"} コスメ・香水・美容
-              %option{:value => "8"} 家電・スマホ・カメラ
-              %option{:value => "9"} スポーツ・レジャー
-              %option{:value => "10"} ハンドメイド
-              %option{:value => "11"} チケット
-              %option{:value => "12"} 自動車・オートバイ
-              %option{:value => "13"} その他
-            #select_parent
+            = f.select :category_id ,options_for_select(@category.map{|p|[p.name, p.id]}) , prompt: "---"
+            #select_children 
           .form-list
             .product-container__main__detail__right__b
               %label
@@ -97,7 +79,7 @@
           = link_to " ", class: "question" do
             ?
         .product-container__main__delivery__right
-          .form-list
+          .form-list#delivery
             .product-container__main__delivery__right__a
               %label
                 配送料の負担
@@ -105,28 +87,33 @@
                 必須
             = f.select :delivery ,class:"select-default"  do
               %option ---
-              %option{:value => "送料込み"} 送料込み(出品者負担)
-              %option{:value => "着払い"} 着払い(購入者負担)
-          .form-list#form-method
+              %option{:value => "1"} 送料込み(出品者負担)
+              %option{:value => "2"} 着払い(購入者負担)
+          .form-list.method#shipping_method
             .product-container__main__delivery__right__a
               %label
                 配送の方法
               %span.form-require 
                 必須
             = f.select :shipping_method ,class:"select-default"  do
-              %option ---
-              %option{:value => "送料込み"} 送料込み(出品者負担)
-              %option{:value => "着払い"} 着払い(購入者負担)
+              %option{value:"---"} ---
+              %option{:value => "1"} 未定
+              %option{:value => "2"} らくらくメルカリ便
+              %option{:value => "3"} ゆうメール
+              %option{:value => "4"} レーターパック
+              %option{:value => "5"} 未定
+              %option{:value => "6"} 普通郵便(定型、定型外)
+              %option{:value => "7"} クロネコヤマト
+              %option{:value => "8"} ユウパック
+              %option{:value => "9"} クリックポスト
+              %option{:value => "10"} ゆうパケット
           .form-list
             .product-container__main__delivery__right__b
               %label
                 発送元の地域
               %span.form-require 
                 必須
-            = f.select :shipping_method ,class:"select-default"  do
-              %option ---
-              %option{:value => "北海道"} 北海道
-              %option{:value => "青森"} 青森
+            = f.collection_select :region, Prefecture.all, :id, :name, prompt: "--", class: 'info-select'
           .form-list
             .product-container__main__delivery__right__c
               %label
