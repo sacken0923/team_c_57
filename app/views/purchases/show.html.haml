@@ -1,7 +1,7 @@
 = render "signup/header-logo"
 .buy-item-container
   .buy-item-container__main
-    = form_for @item, url: done_purchases_path, method: :patch do |f|
+    = form_for @item, url: done_purchase_path, method: :patch do |f|
       %h2.buy-item-container__main__head
         購入内容の確認
       .buy-item-box

@@ -25,9 +25,17 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    
+    @parents = Category.where(ancestry: nil)
   end
   
   def update
+    @item = Item.find(params[:id])
+    if @item.update(params_int(item_params))
+      redirect_to root_path
+    else
+      redirect_to edit_item_path(@item)
+    end
   end
 
 
@@ -39,6 +47,12 @@ class ItemsController < ApplicationController
 
   def search
     @items = Item.where('name LIKE ?', "%#{params[:keyword]}%")
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to root_path
   end
 
   private
@@ -57,5 +71,19 @@ class ItemsController < ApplicationController
       ).merge(seller_id: current_user.id) 
     end
 
+    def integer_string?(str)
+      Integer(str)
+      true
+    rescue ArgumentError
+      false
+    end
+
+    def params_int(item_params)
+      item_params.each do |key,value|
+        if integer_string?(value)
+          item_params[key]=value.to_i
+        end
+      end
+  end
 
 end

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "homes#index"
 
 
-  resources :items, only: [:new, :create , :edit, :update, :show] do
+  resources :items do
     collection do
       get 'search'
       get 'children'
@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   resources :purchases, only: [:show] do
     collection do
       post "pay"
+    end
+    member do
       patch "done"
     end
   end
