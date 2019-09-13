@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
   before_action :set_parents
   protect_from_forgery with: :exception
-end
+
 
   private
 
