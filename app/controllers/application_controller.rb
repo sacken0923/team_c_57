@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :basic_auth, if: :production?
+  before_action :set_parents
   protect_from_forgery with: :exception
+end
 
   private
 
@@ -18,4 +20,9 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:singup,keys:[:nickname,:first_name,:last_name,:kana_first_name,:kana_last_name,:year,:month,:day,:tell,:address_last_name,:address_first_name,:kana_address_last_name,:kana_address_first_name,:prefecture,:postal_code,:city,:address,:building,:home_tel])
   end
+
+  def set_parents
+    @parents = Category.where(ancestry: nil)
+  end
+  
 end
