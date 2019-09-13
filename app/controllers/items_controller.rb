@@ -71,19 +71,19 @@ class ItemsController < ApplicationController
       ).merge(seller_id: current_user.id) 
     end
 
-    def integer_string?(str)
-      Integer(str)
-      true
-    rescue ArgumentError
-      false
-    end
 
-    def params_int(item_params)
-      item_params.each do |key,value|
-        if integer_string?(value)
-          item_params[key]=value.to_i
-        end
-      end
-  end
+  #   # def params_int(item_params)
+  #   #   item_params.each do |key,value|
+  #   #     if integer_string?(value)
+  #   #       item_params[key]=value.to_i
+  #   #     end
+  #   #   end
+  # end
 
+    # def integer_string?(str)
+    #   Integer(str)
+    #   true
+    # rescue ArgumentError
+    #   false
+    # end
 end
