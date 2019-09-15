@@ -50,7 +50,6 @@
             %span.form-require 
               必須
           = f.text_area :description, class: "product-container__main__explain__b__input", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
-          
       .product-container__main__detail
         .product-container__main__detail__left
           商品の詳細
@@ -123,17 +122,16 @@
             .product-container__main__price__right__middle__a
               %p 販売手数料(10%)
             .product-container__main__price__right__middle__b
-              %p -
+              %p#fee_before -
           .product-container__main__price__right__down
             .product-container__main__price__right__down__a
               %p 販売利益
             .product-container__main__price__right__down__b
-              %p -
+              %p#profit_before -
       .product-container__main__sell
         .product-container__main__sell__up
           %p
             = link_to "禁止されている出品", "", class: "jump"
-            、
             = link_to "行為", "", class: "jump"
             を必ずご確認ください。
             %br

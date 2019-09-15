@@ -10,13 +10,10 @@
             %label.form-list__tomo ニックネーム
             %span.required 必須
             = f.text_field :nickname, placeholder: "例) メルカリ太郎",class:"form-list__form tomo"
-            -# - if @user.errors.any?
-            -#   %h3
-            -#     エラーエラー
           .form-list
             %label.form-list__tomo メールアドレス
             %span.required 必須
-            = f.text_field :email, placeholder: "PC・携帯どちらでも可",class:"form-list__form tomo"
+            = f.text_field :email, placeholder: "PC・携帯どちらでも可",class:"form-list__form tomo",type:"email"
           .form-list
             %label.form-list__tomo パスワード
             %span.required 必須
@@ -45,19 +42,19 @@
             %span.required 必須
             .birthday-form
               .select-year
-                = fa_icon "chevron-down",class:"chevron-down"
                 = f.select :year do
-                  = render 'year'
+                  %option{value: "0"} -- 
+                = fa_icon "chevron-down",class:"chevron-down"
               %span 年
               .select-year.month
-                = fa_icon "chevron-down",class:"chevron-down"
                 = f.select :month do
-                  = render 'month'
+                  %option{value: "0"} --
+                = fa_icon "chevron-down",class:"chevron-down"
               %span 月
               .select-year.day
-                = fa_icon "chevron-down",class:"chevron-down"
                 = f.select :day do
-                  = render 'day'
+                  %option{value: "0"} --
+                = fa_icon "chevron-down",class:"chevron-down"
               %span 日
           %p.description
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
