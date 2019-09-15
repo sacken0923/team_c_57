@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   before_action :set_parents
   protect_from_forgery with: :exception
 
-
   private
 
   def production?
