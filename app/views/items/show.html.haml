@@ -76,10 +76,10 @@
         (税込)
       %span.detail-price__message
         送料込み
-    -if current_user.id == @item.seller_id && @item.buyer_id?
+    -if user_signed_in? && current_user.id == @item.seller_id && @item.buyer_id?
       .detail-sold-out
         取引終了の為編集できません
-    -elsif current_user.id == @item.seller_id
+    -elsif user_signed_in? &&  current_user.id == @item.seller_id
       = link_to  edit_item_path(@item), class: "detail-link" do
         .detail-buy__btn
           商品を編集する
@@ -87,9 +87,14 @@
       .detail-sold-out
         売り切れました
     - else @item.buyer_id? 
-      = link_to  purchase_path(@item), class: "detail-link" do
-        .detail-buy__btn
-          購入画面に進む
+      - if user_signed_in?
+        = link_to  purchase_path(@item), class: "detail-link" do
+          .detail-buy__btn
+            購入画面に進む
+      - else
+        = link_to new_user_session_path , class: "detail-link" do
+          .detail-buy__btn
+            購入画面に進む
     .detail-text
       = @item.description
     %div
@@ -117,10 +122,10 @@
         .detail-no-comment
           売り切れのためコメントできません
   .detail-nav
-    = link_to "#", class: "detail-nav__before detail-link" do
-      ＜ラルフローレン ポロシャツ
-    = link_to "#", class: "detail-link detail-nav__after" do
-      コストコ マッシュポテト＞
+    = link_to item_path(@rand_items[0]), class: "detail-nav__before detail-link" do
+      = "＜#{@rand_items[0].name}"
+    = link_to item_path(@rand_items[1]), class: "detail-link detail-nav__after" do
+      = "#{@rand_items[1].name}＞"
   .detail__icons
     = link_to "#", class: "detail-link" do
       =fa_icon "facebook", class: "detail-icon detail-facebook"
