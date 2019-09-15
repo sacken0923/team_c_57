@@ -32,7 +32,7 @@
       .buy-item-container__case__box__name
         =  "〒 #{current_user.postal_code}"
         %br
-        = current_user.prefecture
+        = "#{Prefecture.find(current_user.prefecture).name}#{current_user.city}#{current_user.address}"
         %br
         = "#{current_user.last_name} #{current_user.first_name}"
       .buy-item-container__case__box__edit
