@@ -43,6 +43,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @user = User.find(@item.seller_id)
     @items = Item.where(seller_id: @user.id).limit(6).order(id: "DESC").where.not(id: @item.id)
+    @oter_items = Item.all.limit(6).order(id: "DESC")
   end
 
   def search
