@@ -21,19 +21,22 @@
       .buy-item-box{
         width: 320px;
         margin: 24px auto;
-        &__arigato{
-          background-color: greenyellow;
-          font-size: 40px;
+        &__msg{
+          background-color: lightgray;
+          color: #fff;
+          font-size: 18px;
           text-align: center;
           margin-top: 30px;
+          line-height: 50px;
         }
         &__sayonara{
           margin-top: 30px;
-          background-color: red;
+          background-color: lightgray;
           text-align: center;
           line-height: 50px;
           .back-top{
-            font-size: 25px;
+            font-size: 20px;
+            color: #fff;
             text-decoration: none;
           }
         }
