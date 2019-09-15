@@ -4,12 +4,12 @@ class CardsController < ApplicationController
   
   def new
     card = Card.where(user_id: current_user.id)
-    redirect_to action: "show" if card.exists?  # .exists? データが存在してるか確かめる
+    redirect_to action: "show" if card.exists?  
   end
   
-  def pay #payjpとCardのデータベース作成を実施
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"] #テスト秘密鍵をセット
-    if params['payjp-token'].blank? #blank? nilまたは空のオブジェクトを判定できる。
+  def pay 
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"] 
+    if params['payjp-token'].blank? 
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(

@@ -1,5 +1,5 @@
 class SignupController < ApplicationController
-  before_action :move_to_root
+  before_action :move_to_root ,except: [:registration4,:complete]
   # before_action :step_registration, only: [:registration1,:registration2,:registration3]
   before_action :validates_registration1, only: :registration2
   before_action :validates_registration2, only: :registration3
@@ -42,13 +42,13 @@ class SignupController < ApplicationController
       year: session[:year],
       month: session[:month],
       day: session[:day],
-      tell: 12312341234 ,
+      tell: "090-1234-1234" ,
       address_last_name: "aa",
       address_first_name: "aa",
       kana_address_last_name: "aa",
       kana_address_first_name: "aa",
       prefecture: "aa",
-      postal_code: "aa",
+      postal_code: "123-1234",
       city: "aa",
       address: "aa",
       building: "aa",
@@ -85,7 +85,7 @@ class SignupController < ApplicationController
       kana_address_last_name: "aa",
       kana_address_first_name: "aa",
       prefecture: "aa",
-      postal_code: "aa",
+      postal_code: "123-1234",
       city: "aa",
       address: "aa",
       building: "aa",
@@ -99,9 +99,9 @@ class SignupController < ApplicationController
   end
 
 
-  # def registration4
-  #   @user = User.new
-  # end
+  def registration4
+    sign_in User.find(session[:id]) unless user_signed_in?
+  end
   
   def validates_registration3
     @user = User.new(
@@ -161,17 +161,18 @@ class SignupController < ApplicationController
       building: user_params[:building],
       home_tel: user_params[:home_tel]
     )
+    binding.pry
     if @user.save
       session[:id] = @user.id
-      redirect_to  complete_signup_index_path
+      redirect_to  registration4_signup_index_path
     else
-      redirect_to registration1_signup_index_path
+      redirect_to registration3_signup_index_path
     end
 
 
 
     def complete
-      sign_in User.find(session[:id]) unless user_signed_in?
+      # sign_in User.find(session[:id]) unless user_signed_in?
     end
 
   end

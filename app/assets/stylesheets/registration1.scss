@@ -86,6 +86,10 @@ body{
                             border: 1px solid #ccc;
                             font-size: 16px;
                             background-color: white;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            appearance: none;
+                            cursor: pointer;
                           }
                       }
                     }
