@@ -10,10 +10,14 @@
           %span
             必須
           %p
-            最大10枚までアップロードできます
+            最大枚までアップロードできます
         .images-box
           - @item.photos.each do |photo|
             = image_tag "#{photo.image}",class: "image"
+          = f.file_field :photos, name:"item[photos_attributes][0][image]"
+          
+          -# - @item.photos.each do |photo|
+          -#   = image_tag "#{photo.image}",class: "image"
         .edit-item-images-under
       .content
         .content__name
