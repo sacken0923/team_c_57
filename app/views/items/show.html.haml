@@ -129,10 +129,32 @@
     = link_to "#", class: "detail-link" do
       =fa_icon "instagram", class: "detail-icon detail-instagram"
   .detail__other
+    - unless @items == []
+      = link_to "#", class: "detail-link detail__other__link" do
+        = "#{@user.nickname}さんのその他の商品"
+      .detail__other__items
+        - @items.each do |item|
+          = link_to item_path(item), class: "detail-link" do
+            .detail-item
+              = image_tag "#{item.photos[0].image}", size: "220"
+              .detail-item__description
+                .detail-item__name
+                  = item.name
+                .detail-item__price
+                  .detail-item__price__price
+                    = "￥#{item.price}"
+                  = fa_icon "heart", class: "detail-icon"
+                  .detail-like
+                    = item.like
+              - if  item.buyer_id?
+                .detail-item-sold
+                .sold-text
+                  SOLD
+    .detail__other
     = link_to "#", class: "detail-link detail__other__link" do
-      = "#{@user.nickname}さんのその他の商品"
+      その他の商品
     .detail__other__items
-      - @items.each do |item|
+      - @oter_items.each do |item|
         = link_to item_path(item), class: "detail-link" do
           .detail-item
             = image_tag "#{item.photos[0].image}", size: "220"
@@ -147,82 +169,7 @@
                   = item.like
             - if  item.buyer_id?
               .detail-item-sold
-    .detail__other
-    = link_to "#", class: "detail-link detail__other__link" do
-      その他 （おもちゃ・ホビー・グッズ） その他の商品
-    .detail__other__items
-      = link_to "#", class: "detail-link" do
-        .detail-item
-          = image_tag "kakarotto.jpg", size: "220"
-          .detail-item__description
-            .detail-item__name
-              カカロット
-            .detail-item__price
-              .detail-item__price__price
-                ￥5,000
-              = fa_icon "heart", class: "detail-icon"
-              .detail-like
-                14
-      = link_to "#", class: "detail-link" do
-        .detail-item
-          = image_tag "kakarotto.jpg", size: "220"
-          .detail-item__description
-            .detail-item__name
-              カカロット
-            .detail-item__price
-              .detail-item__price__price
-                ￥5,000
-              = fa_icon "heart", class: "detail-icon"
-              .detail-like
-                14
-      = link_to "#", class: "detail-link" do
-        .detail-item
-          = image_tag "kakarotto.jpg", size: "220"
-          .detail-item__description
-            .detail-item__name
-              カカロット
-            .detail-item__price
-              .detail-item__price__price
-                ￥5,000
-              = fa_icon "heart", class: "detail-icon"
-              .detail-like
-                14
-    .detail__other__items
-      = link_to "#", class: "detail-link" do
-        .detail-item
-          = image_tag "kakarotto.jpg", size: "220"
-          .detail-item__description
-            .detail-item__name
-              カカロット
-            .detail-item__price
-              .detail-item__price__price
-                ￥5,000
-              = fa_icon "heart", class: "detail-icon"
-              .detail-like
-                14
-      = link_to "#", class: "detail-link" do
-        .detail-item
-          = image_tag "kakarotto.jpg", size: "220"
-          .detail-item__description
-            .detail-item__name
-              カカロット
-            .detail-item__price
-              .detail-item__price__price
-                ￥5,000
-              = fa_icon "heart", class: "detail-icon"
-              .detail-like
-                14
-      = link_to "#", class: "detail-link" do
-        .detail-item
-          = image_tag "kakarotto.jpg", size: "220"
-          .detail-item__description
-            .detail-item__name
-              カカロット
-            .detail-item__price
-              .detail-item__price__price
-                ￥5,000
-              = fa_icon "heart", class: "detail-icon"
-              .detail-like
-                14
+              .sold-text
+                SOLD
   .detail__bottom
 = render 'shared/footer'
