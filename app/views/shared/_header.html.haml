@@ -13,8 +13,15 @@
       .header__box__bottom__left
         = link_to "#", class: 'header-category' do
           = fa_icon 'list', class: 'header-category__icon'
-          %span.header-category__search
+          .header-category__search
             カテゴリーから探す
+            .header-category__list.hidden-categories
+              .parents_list
+                - @parents.each do |parent|
+                  .saku-category{id: "#{parent.id}"}
+                    = parent.name
+              .children_list
+              .grand_children_list
         = link_to '#', class: 'header-brand' do
           = fa_icon 'tag', class: 'header-brand__icon'
           %span.header-brand__search

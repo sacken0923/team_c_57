@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :index]
 
+  resources :category, only: [:new]
+
   resources :purchases, only: [:show] do
     collection do
       post "pay"
