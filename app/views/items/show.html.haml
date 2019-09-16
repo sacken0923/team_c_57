@@ -71,14 +71,14 @@
             = Shipping_time.find(@item.shipping_time).name
     .detail-price
       %span.detail-price__price
-        = "¥#{@item.price}"
+        = "¥#{@item.price.to_s(:delimited, separator: ' ')}"
       %span.detail-price__tax
         (税込)
-      %span.detail-price__message
-        送料込み
+      -# %span.detail-price__message
+      -#   送料込み
     -if user_signed_in? && current_user.id == @item.seller_id && @item.buyer_id?
       .detail-sold-out
-        取引終了の為編集できません
+        = "#{@buyer.nickname}様購入"
     -elsif user_signed_in? &&  current_user.id == @item.seller_id
       = link_to  edit_item_path(@item), class: "detail-link" do
         .detail-buy__btn
