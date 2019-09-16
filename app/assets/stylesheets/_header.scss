@@ -54,6 +54,7 @@
           &__search{
             font-size: 14px;
             font-weight: 700;
+            z-index: 100;
             color: #333;
             
           }
@@ -196,9 +197,9 @@
 .selected-grey{
   background-color: lightgray;
 }
-.header-category__search{
-  z-index: 100;
-}
+// .header-category__search{
+//   z-index: 100;
+// }
 .hidden-categories{
   display:none;
 }
