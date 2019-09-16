@@ -3,7 +3,7 @@
   .buy-item-container__main
     = form_for @item do |f|
       %h2.buy-item-container__main__head
-        購入内容の確認
+        ご購入ありがとうございます！
       .buy-item-box
         .buy-item-box__bodys
           = image_tag @item.photos[0].image.url, height: "64px"
@@ -15,8 +15,8 @@
             = @item.price
           .buy-item-box__price__right
             送料込み
-        .buy-item-box__arigato
-          ARIGATO!!
+        .buy-item-box__msg
+          取引メッセージを送る
         .buy-item-box__sayonara
-          = link_to "Topページへ戻る", root_path, class: "back-top"
+          = link_to "トップページへ戻る", root_path, class: "back-top"
 = render "signup/footer"

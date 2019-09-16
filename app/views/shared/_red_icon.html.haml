@@ -1,7 +1,8 @@
-= link_to new_item_path, class: "red-icon-link"  do
-  .red-icon
-    .red-icon__message
-      出品
-    .red-icon__camera
-      = fa_icon "camera"
+- if user_signed_in?
+  = link_to new_item_path, class: "red-icon-link"  do
+    .red-icon
+      .red-icon__message
+        出品
+      .red-icon__camera
+        = fa_icon "camera"
     

@@ -161,6 +161,7 @@ class SignupController < ApplicationController
       building: user_params[:building],
       home_tel: user_params[:home_tel]
     )
+    
     if @user.save
       session[:id] = @user.id
       redirect_to  registration4_signup_index_path
