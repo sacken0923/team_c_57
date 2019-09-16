@@ -2,7 +2,7 @@ $(function(){
   $("#item_price").on("change",function(){
     var price = document.getElementById("item_price").value;
     var fee = Math.floor(price*0.1)
-    var profit = Math.floor(price*0.9)
+    var profit = Math.ceil(price - price*0.1)
     var feehtml = `<p>${fee}円</p>`
     var profithtml = `<p>${profit}円</p>`
       if(!isNaN(price) && price >= 300){

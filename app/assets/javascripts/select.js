@@ -51,12 +51,12 @@ $(function(){
   });
 
   $(document).on("change","#children-select",function(){
-    var childrencategory = document.getElementById("children-select").value;
-    if ( childrencategory != ''){
+    var productcategory = document.getElementById("children-select").value;
+    if ( productcategory != '---'){
       $.ajax({
         url: "/items/grandchildren",
         type: "GET",
-        data: {productcategory: childrencategory},
+        data: {productcategory: productcategory},
         dataType: "json"
       })
       .done(function(grandchildren){

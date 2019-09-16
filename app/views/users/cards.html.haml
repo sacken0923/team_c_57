@@ -3,9 +3,12 @@
   .mypage__box
     = render 'shared/side_bar'
     .log-out
+      .log-out__text
+        .log-out__text__message
+          支払い方法
       .log-out__box
         = link_to new_card_path, class: "log-out-link" do
           .log-out-btn
-            クレジットカード
+            クレジットカードを追加する
 = render 'shared/footer' 
 = render 'shared/red_icon'
