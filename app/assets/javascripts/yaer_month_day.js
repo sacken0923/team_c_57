@@ -11,7 +11,11 @@ $(function(){
     var monthselect = document.getElementById("user_month").value;
       if(monthselect == 2 ){
         for (var i = 1; i <=  29; i++) {
-          $('#user_day').append('<option value="' + i + '">' + i + '</option>');
+          var html = '<option value="' + i + '">' + i + '</option>'
+          $('#user_day').append(html);
+          // $(document).on('change','#user_month',function(){
+          //   $('#user_day').empty(html);
+          // })
         }
       }else if(monthselect == 4 || monthselect == 6 || monthselect == 9 || monthselect == 11){
         for (var i = 1; i <=  30; i++) {

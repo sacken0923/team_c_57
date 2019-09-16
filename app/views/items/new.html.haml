@@ -5,12 +5,13 @@
       %h2.product-container__main__head
         商品の情報を入力
       .product-container__main__image
-        %h3.product-container__main__image__up
-          出品画像
-          %span.form-require  
-            必須
-        %p
-          最大5枚までアップロードできます。
+        .product-container__main__image__text
+          %h3.product-container__main__image__up
+            出品画像
+            %span.form-require  
+              必須
+          %p
+            最大5枚までアップロードできます。
         .fiele_field
           = f.fields_for  :photos do |photo|
             %label

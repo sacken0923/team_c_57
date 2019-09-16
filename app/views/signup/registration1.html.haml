@@ -13,7 +13,7 @@
           .form-list
             %label.form-list__tomo メールアドレス
             %span.required 必須
-            = f.text_field :email, placeholder: "PC・携帯どちらでも可",class:"form-list__form tomo",type:"email"
+            = f.text_field :email, placeholder: "PC・携帯どちらでも可",class:"form-list__form tomo",type:"email"#,pattern:"/\A[\w.ー]+[^.]@[\w.ー]+\z/"
           .form-list
             %label.form-list__tomo パスワード
             %span.required 必須
@@ -31,31 +31,38 @@
             .form-list__name
               = f.text_field :last_name, placeholder: "例) 孫",class:"form-list__form harf"
               = f.text_field :first_name, placeholder: "例) 悟空",class:"form-list__form harf"
+            #lastname
+            #firstname
           .form-list
             %label.form-list__tomo お名前カナ(全角)
             %span.required 必須
             .form-list__name
               = f.text_field :kana_last_name, placeholder: "例) カカ", pattern:"[\u30A1-\u30F6]*",class:"form-list__form harf"
               = f.text_field :kana_first_name, placeholder: "例) ロット",pattern:"[\u30A1-\u30F6]*",class:"form-list__form harf"
+            #kana_lastname
+            #kana_firstname
           .form-list
             %label.form-list__tomo 生年月日
             %span.required 必須
             .birthday-form
               .select-year
                 = f.select :year do
-                  %option{value: "0"} -- 
+                  %option{value: ""} -- 
                 = fa_icon "chevron-down",class:"chevron-down"
               %span 年
               .select-year.month
                 = f.select :month do
-                  %option{value: "0"} --
+                  %option{value: ""} --
                 = fa_icon "chevron-down",class:"chevron-down"
               %span 月
               .select-year.day
                 = f.select :day do
-                  %option{value: "0"} --
+                  %option{value: ""} --
                 = fa_icon "chevron-down",class:"chevron-down"
               %span 日
+              #select-year
+              #select-month
+              #select-day
           %p.description
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         .member-main__bottom

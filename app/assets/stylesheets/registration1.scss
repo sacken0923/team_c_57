@@ -47,7 +47,7 @@ body{
                     }
                     .form-list__form{
                       width: 100%;
-                      margin: 8px 0 0;
+                      margin: 8px 0 0 ;
                       height: 30px;
                       padding: 10px 16px 8px;
                       border-radius: 4px;
@@ -124,4 +124,59 @@ body{
             }
         }
     }
+}
+
+#user_nickname-error{
+  color:red;
+  font-size: 15px;
+}
+
+#user_email-error{
+  color:red;
+  font-size: 15px;
+}
+
+#user_password-error{
+  color:red;
+  font-size: 15px;
+}
+
+#user_password_confirmation-error{
+  color:red;
+  font-size: 15px;
+}
+
+#user_last_name-error{
+  color: red;
+  font-size: 15px;
+}
+
+#user_first_name-error{
+  color: red;
+  font-size: 15px;
+}
+
+#user_kana_last_name-error{
+  color: red;
+  font-size: 15px;
+}
+
+#user_kana_first_name-error{
+  color: red;
+  font-size: 15px;
+}
+
+#user_year-error{
+  color: red;
+  font-size: 15px;
+}
+
+#user_month-error{
+  color: red;
+  font-size: 15px;
+}
+
+#user_day-error{
+  color: red;
+  font-size: 15px;
 }

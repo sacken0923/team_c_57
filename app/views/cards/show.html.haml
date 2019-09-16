@@ -3,6 +3,10 @@
   .mypage__box
     = render 'shared/side_bar'
     .log-out
-      = render "pay"
+      .log-out__text
+        .log-out__text__message
+          支払い方法
+        .log-out__box
+          = render "pay"
 = render 'shared/footer' 
 = render 'shared/red_icon'
