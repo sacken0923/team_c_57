@@ -10,11 +10,11 @@
           %span
             必須
           %p
-            最大枚までアップロードできます
+            最大5枚までアップロードできます
         .images-box
           - @item.photos.each do |photo|
             = image_tag "#{photo.image}",class: "image"
-          = f.file_field :photos, name:"item[photos_attributes][0][image]"
+          = f.file_field :photos, name:"item[photos_attributes][0][image]",class: "input_image"
           
           -# - @item.photos.each do |photo|
           -#   = image_tag "#{photo.image}",class: "image"
@@ -88,12 +88,12 @@
             %p 
               販売手数料 (10%)
             %p
-              = "¥#{@item.price / 10}"
+              = "¥#{(@item.price / 10).to_s(:delimited, separator: ' ')}"
           .price-box__bottom
             %p 
               販売利益
             .profit
-              = "¥#{(@item.price - @item.price / 10).to_i}"
+              = "¥#{(@item.price - @item.price / 10).to_s(:delimited, separator: ' ')}"
       .btn
         = f.submit "変更する", class: "change-submit"
         = link_to "/items/#{@item.id}", method: :delete,class: "link" do

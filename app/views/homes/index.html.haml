@@ -18,7 +18,7 @@
                   = item.name
                 .top-description__bottom
                   .top-description__bottom__price
-                    = "¥#{item.price}"
+                    = "¥#{item.price.to_s(:delimited, separator: ' ')}"
                   .top-description__bottom__like
                     = fa_icon "heart"
                     %span.top-description__bottom__like-count
@@ -47,7 +47,7 @@
                   = item.name
                 .top-description__bottom
                   .top-description__bottom__price
-                    = "¥#{item.price}"
+                    = "¥#{item.price.to_s(:delimited, separator: ' ')}"
                   .top-description__bottom__like
                     = fa_icon "heart"
                     %span.top-description__bottom__like-count
@@ -76,7 +76,7 @@
                   = item.name
                 .top-description__bottom
                   .top-description__bottom__price
-                    = "¥#{item.price}"
+                    = "¥#{item.price.to_s(:delimited, separator: ' ')}"
                   .top-description__bottom__like
                     = fa_icon "heart"
                     %span.top-description__bottom__like-count
@@ -105,7 +105,7 @@
                   = item.name
                 .top-description__bottom
                   .top-description__bottom__price
-                    = "¥#{item.price}"
+                    = "¥#{item.price.to_s(:delimited, separator: ' ')}"
                   .top-description__bottom__like
                     = fa_icon "heart"
                     %span.top-description__bottom__like-count
@@ -139,7 +139,7 @@
                       = item.name
                     .top-description__bottom
                       .top-description__bottom__price
-                        = "¥#{item.price}"
+                        = "¥#{item.price.to_s(:delimited, separator: ' ')}"
                       .top-description__bottom__like
                         = fa_icon "heart"
                         %span.top-description__bottom__like-count
@@ -169,7 +169,7 @@
                       = item.name
                     .top-description__bottom
                       .top-description__bottom__price
-                        = "¥#{item.price}"
+                        = "¥#{item.price.to_s(:delimited, separator: ' ')}"
                       .top-description__bottom__like
                         = fa_icon "heart"
                         %span.top-description__bottom__like-count
@@ -199,7 +199,7 @@
                       = item.name
                     .top-description__bottom
                       .top-description__bottom__price
-                        = "¥#{item.price}"
+                        = "¥#{item.price.to_s(:delimited, separator: ' ')}"
                       .top-description__bottom__like
                         = fa_icon "heart"
                         %span.top-description__bottom__like-count

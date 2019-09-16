@@ -45,6 +45,9 @@ class ItemsController < ApplicationController
     @items = Item.where(seller_id: @user.id).limit(6).order(id: "DESC").where.not(id: @item.id)
     @oter_items = Item.all.limit(6).order(id: "DESC")
     @rand_items = Item.order("RAND()").limit(2)
+    if @item.buyer_id?
+      @buyer = User.find(@item.buyer_id)
+    end
   end
 
   def search
