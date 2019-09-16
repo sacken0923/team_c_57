@@ -177,7 +177,6 @@
   display: flex;
   margin-top: 15px;
   border-top: #eee solid 1px;
-  border-bottom: #eee solid 1px;
   top: 70px;
 }
 
@@ -189,7 +188,6 @@
   width: 200px;
   background-color: #fff;
   font-weight: 300;
-  
 }
 .selected-red{
   background-color: #ea352d;
@@ -197,9 +195,6 @@
 .selected-grey{
   background-color: lightgray;
 }
-// .header-category__search{
-//   z-index: 100;
-// }
 .hidden-categories{
   display:none;
 }
