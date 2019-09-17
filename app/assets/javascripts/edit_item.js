@@ -1,12 +1,17 @@
-// $(function(){
-//   $("#item_photos").on("change",function(e){
-//     var reader = new FileReader();
-//     var file = e.target.files[0];
-//     if(file.type.index0f("image") < 0){
-//       return false;
-//     }
-//     reader.onload = (function(file){
-//     })
-//   })
 
-// })
+
+$(function(){
+  $('#item_photos').change(function(){
+      var file = $(this).prop('files')[0];
+      if(!file.type.match('image.*')){
+          return;
+      }
+      var fileReader = new FileReader();
+      fileReader.onloadend = function() {
+        $('.edit_label').addClass('edit-hidden');
+        $('.images-box').append(`<img class="image edit-image" src="${fileReader.result}" alt="Images">`);
+      }
+      fileReader.readAsDataURL(file);
+  });
+});
+

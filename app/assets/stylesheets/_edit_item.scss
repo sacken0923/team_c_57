@@ -43,7 +43,7 @@
         box-sizing: border-box;
         display: flex;
         .image{
-          width: 120px;
+          width: 123.5px;
           height: 160px;
         }
       }
@@ -195,4 +195,7 @@
     .edit-item-images-under{
       height: 40px;
       border-bottom: #f5f5f5 solid 1px;
+    }
+    .edit-hidden{
+      display: none;
     }
