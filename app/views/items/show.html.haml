@@ -124,8 +124,8 @@
   .detail-nav
     = link_to item_path(@rand_items[0]), class: "detail-nav__before detail-link" do
       = "＜#{@rand_items[0].name}"
-    = link_to item_path(@rand_items[1]), class: "detail-link detail-nav__after" do
-      = "#{@rand_items[1].name}＞"
+    = link_to item_path(@rand_items[-1]), class: "detail-link detail-nav__after" do
+      = "#{@rand_items[-1].name}＞"
   .detail__icons
     = link_to "#", class: "detail-link" do
       =fa_icon "facebook", class: "detail-icon detail-facebook"

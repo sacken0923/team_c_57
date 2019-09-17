@@ -183,7 +183,14 @@
   
         }
   }
-  
+  .input_image{
+    display: none;
+  }
+      
+  .edit_label{
+    flex: 1;
+  }
+
 }
     .edit-item-images-under{
       height: 40px;
