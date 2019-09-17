@@ -6,7 +6,6 @@
 //       return false;
 //     }
 //     reader.onload = (function(file){
-      
 //     })
 //   })
 

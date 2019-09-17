@@ -14,8 +14,9 @@
         .images-box
           - @item.photos.each do |photo|
             = image_tag "#{photo.image}",class: "image"
-          = f.file_field :photos, name:"item[photos_attributes][0][image]",class: "input_image"
-          
+          %label.edit_label
+            = f.file_field :photos, name:"item[photos_attributes][0][image]",class: "input_image" 
+            .edit-box
           -# - @item.photos.each do |photo|
           -#   = image_tag "#{photo.image}",class: "image"
         .edit-item-images-under
@@ -45,7 +46,6 @@
             %span
               必須
           = f.collection_select :state, State.all, :id, :name, prompt: "--"
-            
       .explain-box
         .explain-box__left
           配送について
@@ -76,7 +76,7 @@
             
       .explain-box
         .explain-box__left
-          販売価格(300〜9,999,999
+          販売価格(300〜9,999,999)
         .price-box
           .price-box__top
             %p
@@ -99,7 +99,4 @@
         = link_to "/items/#{@item.id}", method: :delete,class: "link" do
           .cancel-btn
             出品をやめる
-
-
-
 = render "signup/footer"
