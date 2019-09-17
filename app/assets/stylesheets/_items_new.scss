@@ -88,7 +88,6 @@ select{
         border-top: 1px solid #EEEEEE;
         &__a{
           height: 70px;
-          font-weight: bold;
           &__input{
             margin-top: 8px;
             border-radius: 4px;
@@ -102,7 +101,6 @@ select{
         &__b{
           height: 19px;
           margin-top: 40px;
-          font-weight: bold;
           &__input{
             margin-top: 8px;
             padding: 10px;
@@ -202,7 +200,6 @@ select{
             display: flex;
             justify-content: space-between;
             padding: 0px 0px 24px;
-            border-bottom: 1px solid #EEEEEE;
             &__a{
               display: flex;
               align-items: center;
@@ -236,6 +233,7 @@ select{
             justify-content: space-between;
             padding: 24px 0px;
             border-bottom: 1px solid #EEEEEE;
+            border-top: 1px solid #EEEEEE;
             &__a{
               font-size: 14px;
             }
@@ -321,4 +319,28 @@ select{
 .method{
   display:none;
 }
+
+.profit{
+  font-size: 34px;
+}
+
+.label{
+  font-weight: bold;
+}
+
+#item_name-error,
+#item_price-error,
+#item_description-error,
+#item_category_id-error,
+#item_state-error,
+#item_delivery-error,
+#item_shipping_method-error,
+#item_region-error,
+#item_shipping_time-error{
+  color:red;
+  font-size: 15px;
+}
+
+
+
 

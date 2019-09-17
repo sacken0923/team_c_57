@@ -16,7 +16,7 @@
           = f.fields_for  :photos do |photo|
             %label
               .image_up
-                = photo.file_field :image, type:"file",multiple: true,name:"item[photos_attributes][0][image]",class:" product-container__main__image__box ",id:"file_0"
+                = photo.file_field :image, type:"file",name:"item[photos_attributes][0][image]",class:" product-container__main__image__box ",id:"file_0"
                 #image_0
             %label
               .image_up
@@ -40,13 +40,13 @@
                 #image_4
       .product-container__main__explain
         .product-container__main__explain__a
-          %label
+          %label.label
             商品名
             %span.form-require 
               必須
           = f.text_field :name, class: "product-container__main__explain__a__input", placeholder: "商品名 必須(40字まで)"
         .product-container__main__explain__b
-          %label
+          %label.label
             商品の説明
             %span.form-require 
               必須
@@ -57,7 +57,7 @@
         .product-container__main__detail__right
           .form-list
             .product-container__main__detail__right__a
-              %label
+              %label.label
                 カテゴリー
               %span.form-require 
                 必須
@@ -65,7 +65,7 @@
             #select_children 
           .form-list
             .product-container__main__detail__right__b
-              %label
+              %label.label
                 商品の状態
               %span.form-require 
                 必須
@@ -78,28 +78,28 @@
         .product-container__main__delivery__right
           .form-list#delivery
             .product-container__main__delivery__right__a
-              %label
+              %label.label
                 配送料の負担
               %span.form-require 
                 必須
             = f.collection_select :delivery, Delivery.all, :id, :name, prompt: "---"
           .form-list.method#shipping_method
             .product-container__main__delivery__right__a
-              %label
+              %label.label
                 配送の方法
               %span.form-require 
                 必須
             = f.collection_select :shipping_method ,Shipping_method.all,:id, :name,prompt: "---", selected: @item.shipping_method_before_type_cast
           .form-list
             .product-container__main__delivery__right__b
-              %label
+              %label.label
                 発送元の地域
               %span.form-require 
                 必須
             = f.collection_select :region, Prefecture.all, :id, :name, prompt: "--", class: 'info-select'
           .form-list
             .product-container__main__delivery__right__c
-              %label
+              %label.label
                 発送までの日数
               %span.form-require 
                 必須
@@ -112,13 +112,14 @@
         .product-container__main__price__right
           .product-container__main__price__right__up
             .product-container__main__price__right__up__a
-              %label
+              %label.label
                 価格
               %span.form-require 
                 必須
             .product-container__main__price__right__up__b
               %p ¥
               = f.text_field :price, class: "product-container__main__price__right__up__b__input", placeholder: "例）300"
+          #price
           .product-container__main__price__right__middle
             .product-container__main__price__right__middle__a
               %p 販売手数料(10%)
