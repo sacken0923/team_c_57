@@ -80,10 +80,10 @@ $(function(){
             equalTo: "パスワードとパスワード(確認)が一致しません"
         },
         "user[last_name]": {
-            required: "お名前(姓)を入力してください",
+            required: "(姓)を入力してください",
         },
         "user[first_name]": {
-            required: "お名前(名)を入力してください",
+            required: "(名)を入力してください",
         },
         "user[kana_last_name]": {
             required: "お名前カナ(姓)を入力してください",
@@ -104,10 +104,10 @@ $(function(){
             required: "電話番号を入力してください",
         },
         "user[address_last_name]": {
-            required: "お名前(姓)を入力してください",
+            required: "(姓)を入力してください",
         },
         "user[address_first_name]": {
-            required: "お名前(名)を入力してください",
+            required: "(名)を入力してください",
         },
         "user[kana_address_last_name]": {
             required: "お名前カナ(姓)を入力してください",
