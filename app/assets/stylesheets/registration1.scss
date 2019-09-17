@@ -126,57 +126,17 @@ body{
     }
 }
 
-#user_nickname-error{
-  color:red;
-  font-size: 15px;
-}
-
-#user_email-error{
-  color:red;
-  font-size: 15px;
-}
-
-#user_password-error{
-  color:red;
-  font-size: 15px;
-}
-
-#user_password_confirmation-error{
-  color:red;
-  font-size: 15px;
-}
-
-#user_last_name-error{
-  color: red;
-  font-size: 15px;
-}
-
-#user_first_name-error{
-  color: red;
-  font-size: 15px;
-}
-
-#user_kana_last_name-error{
-  color: red;
-  font-size: 15px;
-}
-
-#user_kana_first_name-error{
-  color: red;
-  font-size: 15px;
-}
-
-#user_year-error{
-  color: red;
-  font-size: 15px;
-}
-
-#user_month-error{
-  color: red;
-  font-size: 15px;
-}
-
+#user_nickname-error,
+#user_email-error,
+#user_password-error,
+#user_password_confirmation-error,
+#user_last_name-error,
+#user_first_name-error,
+#user_kana_last_name-error,
+#user_kana_first_name-error,
+#user_year-error,
+#user_month-error,
 #user_day-error{
-  color: red;
+  color:red;
   font-size: 15px;
 }

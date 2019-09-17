@@ -72,49 +72,16 @@
   width: 345px;
 }
 
-#user_address_last_name-error{
-  color:red;
-  font-size: 15px;
-  font-weight: 20px;
-}
-
-#user_address_first_name-error{
-  color:red;
-  font-size: 15px;
-  font-weight: 20px;
-}
-#user_kana_address_last_name-error{
-  color:red;
-  font-size: 15px;
-  font-weight: 20px;
-}
-
-#user_kana_address_first_name-error{
-  color:red;
-  font-size: 15px;
-  font-weight: 20px;
-}
-
-#user_postal_code-error{
-  color:red;
-  font-size: 15px;
-  font-weight: 20px;
-}
-
-#user_prefecture-error{
-  color:red;
-  font-size: 15px;
-  font-weight: 20px;
-}
-
-#user_city-error{
-  color:red;
-  font-size: 15px;
-  font-weight: 20px;
-}
-
+#user_address_last_name-error,
+#user_address_first_name-error,
+#user_kana_address_last_name-error,
+#user_kana_address_first_name-error,
+#user_postal_code-error,
+#user_prefecture-error,
+#user_city-error,
 #user_address-error{
   color:red;
   font-size: 15px;
   font-weight: 20px;
 }
+

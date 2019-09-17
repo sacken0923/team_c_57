@@ -94,7 +94,7 @@ class SignupController < ApplicationController
     if @user.valid?
       registration3_signup_index_path
     else
-      render "signup/registration2" 
+      redirect_to registration2_signup_index_path
     end
   end
 
@@ -128,11 +128,7 @@ class SignupController < ApplicationController
       building: user_params[:building],
       home_tel: user_params[:home_tel]
     )
-    if @user.valid? 
-      complete_signup_index_path
-    else
-      render "signup/registration3" 
-    end
+    @user.valid? unless registration3_signup_index_path
   end
   
 
@@ -172,7 +168,6 @@ class SignupController < ApplicationController
 
 
     def complete
-      # sign_in User.find(session[:id]) unless user_signed_in?
     end
 
   end
