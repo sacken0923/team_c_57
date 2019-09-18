@@ -12,14 +12,14 @@ class User < ApplicationRecord
   validates :month,                   presence: true
   validates :day,                     presence: true
   # registration2
-  validates :tell,                    presence: true  , format: { with: /\A0[7-9]0-\d{4}-\d{4}\z/ }
+  validates :tell,                    presence: true  #, format: { with: /\A0[7-9]0-\d{4}-\d{4}\z/ }
   # registration3
   validates :address_last_name,       presence: true
   validates :address_first_name,      presence: true
   validates :kana_address_last_name,  presence: true
   validates :kana_address_first_name, presence: true
   validates :prefecture,              presence: true
-  validates :postal_code,             presence: true, format: { with: /\A\d{3}-\d{4}\z/ }
+  validates :postal_code,             presence: true #, format: { with: /\A\d{3}-\d{4}\z/ }
   validates :city,                    presence: true
   validates :address,                 presence: true
   # Include default devise modules. Others available are:

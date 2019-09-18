@@ -207,16 +207,4 @@ class SignupController < ApplicationController
       redirect_to root_path if user_signed_in?
     end
 
-    # def  step_registration
-
-    #   if 
-
-    #   else
-        
-    #   end
-
-    # end
-
-    
-
 end
