@@ -14,6 +14,8 @@ class Item < ApplicationRecord
   validates :shipping_method,                presence: true
   validates :shipping_time,                  presence: true
   validates :region,                         presence: true
+  validates :photos,                         presence: true
+  
   
 
 end
