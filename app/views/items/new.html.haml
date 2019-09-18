@@ -13,7 +13,7 @@
           %p
             最大5枚までアップロードできます。
         .fiele_field
-          = f.fields_for  :photos do |photo|
+          = f.fields_for :photos do |photo|
             %label
               .image_up
                 = photo.file_field :image, type:"file",name:"item[photos_attributes][0][image]",class:" product-container__main__image__box ",id:"file_0"
