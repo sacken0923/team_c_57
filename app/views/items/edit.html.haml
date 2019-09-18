@@ -14,9 +14,10 @@
         .images-box
           - @item.photos.each do |photo|
             = image_tag "#{photo.image}",class: "image"
-          %label.edit_label
-            = f.file_field :photos, name:"item[photos_attributes][0][image]",class: "input_image" 
-            .edit-box
+          - if @item.photos.length < 5
+            %label.edit_label
+              = f.file_field :photos, name:"item[photos_attributes][0][image]",class: "input_image" 
+              .edit-box
           -# - @item.photos.each do |photo|
           -#   = image_tag "#{photo.image}",class: "image"
         .edit-item-images-under
@@ -87,7 +88,7 @@
           .price-box__mid
             %p 
               販売手数料 (10%)
-            %p
+            %p.explain-fee
               = "¥#{(@item.price / 10).to_s(:delimited, separator: ' ')}"
           .price-box__bottom
             %p 

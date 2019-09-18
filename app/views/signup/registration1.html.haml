@@ -47,17 +47,17 @@
             .birthday-form
               .select-year
                 = f.select :year do
-                  %option{value: ""} -- 
+                  = render "year"
                 = fa_icon "chevron-down",class:"chevron-down"
               %span 年
               .select-year.month
                 = f.select :month do
-                  %option{value: ""} --
+                  = render "month"
                 = fa_icon "chevron-down",class:"chevron-down"
               %span 月
               .select-year.day
                 = f.select :day do
-                  %option{value: ""} --
+                  = render "day"
                 = fa_icon "chevron-down",class:"chevron-down"
               %span 日
               #select-year

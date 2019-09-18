@@ -1,9 +1,6 @@
 $(function(){
   $("#new_item").validate({
     rules: {
-      "item[photos_attributes][0][image]":{
-        required: true,
-      },
       "item[name]":{
         required: true,
       },
@@ -33,9 +30,6 @@ $(function(){
       },
     },
     messages: {
-      "item[photos_attributes][0][image]":{
-        required: "aaaa",
-      },
       "item[name]":{
         required: "入力してください",
       },
