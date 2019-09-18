@@ -88,7 +88,7 @@
           .price-box__mid
             %p 
               販売手数料 (10%)
-            %p
+            %p.explain-fee
               = "¥#{(@item.price / 10).to_s(:delimited, separator: ' ')}"
           .price-box__bottom
             %p 
