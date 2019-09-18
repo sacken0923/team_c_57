@@ -45,9 +45,14 @@ $(function(){
   });
 });
 
-// $(function(){
-//   $(".detail-images").on("mouseover",function(){
-//     $(".detail-main-image").remove();
-//   })
-// })
+$(function(){
+  $(".detail-images").on("mouseover",function(){
+    console.log(this);
+    var image = $(this).attr('src')
+    var changeImage = `<img class="detail-main-image" src="${image}" alt="Images" width="300" height="300">`
+    $(".detail-main-image").remove();
+    $('.detail-image-box').prepend(changeImage)
+  })
+})
+
 
