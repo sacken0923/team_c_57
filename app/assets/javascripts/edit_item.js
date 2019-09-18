@@ -4,7 +4,6 @@ $(function(){
   var i = 0;
   $(document).on("change", ".input_image", function(){
   // $('.input_image').change(function(){
-    console.log(i)
       var file = $(this).prop('files')[0];
       if(!file.type.match('image.*')){
           return;
@@ -47,7 +46,7 @@ $(function(){
 
 $(function(){
   $(".detail-images").on("mouseover",function(){
-    console.log(this);
+
     var image = $(this).attr('src')
     var changeImage = `<img class="detail-main-image" src="${image}" alt="Images" width="300" height="300">`
     $(".detail-main-image").remove();
