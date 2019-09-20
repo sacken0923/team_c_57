@@ -37,8 +37,8 @@
             %label.form-list__tomo お名前カナ(全角)
             %span.required 必須
             .form-list__name
-              = f.text_field :kana_last_name, placeholder: "例) カカ", pattern:"[\u30A1-\u30F6]*",class:"form-list__form harf"
-              = f.text_field :kana_first_name, placeholder: "例) ロット",pattern:"[\u30A1-\u30F6]*",class:"form-list__form harf"
+              = f.text_field :kana_last_name, placeholder: "例) カカ",class:"form-list__form harf"
+              = f.text_field :kana_first_name, placeholder: "例) ロット",class:"form-list__form harf"
             #kana_lastname
             #kana_firstname
           .form-list
