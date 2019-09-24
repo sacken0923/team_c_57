@@ -1,6 +1,6 @@
 class PurchasesController < ApplicationController
+  before_action :authenticate ,only: :show
   require "payjp"
-  # before_action :set_item, only: [:show]
 
   def show
     @item = Item.find(params[:id])
@@ -24,35 +24,14 @@ class PurchasesController < ApplicationController
   )
   end
 
-  # def update
-  #   binding.pry
-  #   @item.update(item_params)
-  #   redirect_to done_purchases_path
-  # end
-
   def done
     # binding.pry
     @item = Item.find(params[:id])
     @item.update(buyer_id: current_user.id)
   end
 
-  # private
-
-  # def item_params
-  #   params.require(:item).permit(
-  #     :name,
-  #     :price,
-  #     :description,
-  #     :state,
-  #     :delivery,
-  #     :shipping_method,
-  #     :shipping_time,
-  #     photos_attributes:[:item_id, :image ]
-  #   ).merge(buyer_id: current_user.id)
-  # end
-
-  # def set_item
-  #   @item = Item.find(params[:id])
-  # end
+  def authenticate
+    redirect_to new_user_session_path unless user_signed_in?
+  end
 
 end
